@@ -63,9 +63,9 @@ export function EmojiIcon({
   className?: string;
 }) {
   const sizes = {
-    sm: "h-10 w-10 text-xl",
-    md: "h-14 w-14 text-2xl",
-    lg: "h-20 w-20 text-4xl",
+    sm: "h-12 w-12 text-2xl",
+    md: "h-16 w-16 text-3xl",
+    lg: "h-22 w-22 text-5xl",
   };
   const tones: Record<string, string> = {
     electric: "bg-gradient-to-br from-[var(--electric)]/30 to-[var(--violet)]/20 ring-[var(--electric)]/40",
