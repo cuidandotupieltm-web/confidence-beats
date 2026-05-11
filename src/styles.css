@@ -44,11 +44,12 @@
 
 /* DARK (default) — Neon Electric */
 :root,
+:root.dark,
 .dark {
   --radius: 0.875rem;
 
-  --background: oklch(0.14 0.04 285);
-  --foreground: oklch(0.94 0.06 235);
+  --background: oklch(0.17 0.06 270);
+  --foreground: oklch(0.96 0.05 230);
 
   --card: oklch(0.20 0.05 285);
   --card-foreground: oklch(0.94 0.06 235);
@@ -90,11 +91,12 @@
   --grid-line: oklch(1 0 0 / 0.05);
 }
 
-/* LIGHT — clean premium */
+/* LIGHT — clean premium light blue */
+:root.light,
 .light {
   --radius: 0.875rem;
 
-  --background: oklch(0.985 0.005 280);
+  --background: oklch(0.97 0.03 235);
   --foreground: oklch(0.18 0.04 285);
 
   --card: oklch(1 0 0);
@@ -315,24 +317,57 @@
     letter-spacing: -0.03em;
   }
 
-  /* Theme switch (sun/moon track) */
+  /* Theme switch (sun/moon track) — modern */
   .theme-switch {
     position: relative;
-    width: 58px; height: 30px;
+    width: 64px; height: 32px;
     border-radius: 9999px;
-    background: linear-gradient(90deg, color-mix(in oklab, var(--electric) 35%, transparent), color-mix(in oklab, var(--magenta) 35%, transparent));
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(90deg, #1B2746, #3A1B5C);
+    border: 1px solid rgba(255,255,255,0.18);
     cursor: pointer;
-    transition: background .3s ease;
+    box-shadow: 0 6px 20px -6px rgba(122,60,255,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: background .35s ease, box-shadow .35s ease;
+    overflow: hidden;
   }
+  .theme-switch[data-theme="light"] {
+    background: linear-gradient(90deg, #FFD66B, #FF7A1A);
+    box-shadow: 0 6px 20px -6px rgba(255,122,26,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .theme-switch .track-icon {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    font-size: 13px; line-height: 1; pointer-events: none;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+  .theme-switch .track-sun  { left: 8px;  opacity: 0; transition: opacity .3s; }
+  .theme-switch .track-moon { right: 8px; opacity: 1; transition: opacity .3s; }
+  .theme-switch[data-theme="light"] .track-sun  { opacity: 1; }
+  .theme-switch[data-theme="light"] .track-moon { opacity: 0; }
   .theme-switch .knob {
     position: absolute; top: 3px; left: 3px;
-    width: 24px; height: 24px; border-radius: 9999px;
-    background: white;
+    width: 26px; height: 26px; border-radius: 9999px;
+    background: linear-gradient(135deg, #ffffff, #E6EAFF);
     box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08) inset;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; line-height: 1;
-    transition: transform .35s cubic-bezier(.4,1.6,.6,1);
+    transition: transform .4s cubic-bezier(.4,1.6,.6,1), background .35s ease;
   }
-  .theme-switch[data-theme="light"] .knob { transform: translateX(28px); }
+  .theme-switch[data-theme="light"] .knob {
+    transform: translateX(32px);
+    background: linear-gradient(135deg, #FFF6E0, #FFD66B);
+  }
+
+  /* Language pill */
+  .lang-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    color: var(--foreground);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--electric) 22%, transparent), color-mix(in oklab, var(--magenta) 22%, transparent));
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 18px -6px color-mix(in oklab, var(--violet) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .lang-pill:hover {
+    transform: translateY(-1px) scale(1.03);
+    box-shadow: 0 8px 24px -6px color-mix(in oklab, var(--magenta) 65%, transparent);
+  }
 }
