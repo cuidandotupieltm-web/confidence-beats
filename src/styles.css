@@ -44,11 +44,12 @@
 
 /* DARK (default) — Neon Electric */
 :root,
+:root.dark,
 .dark {
   --radius: 0.875rem;
 
-  --background: oklch(0.14 0.04 285);
-  --foreground: oklch(0.94 0.06 235);
+  --background: oklch(0.17 0.06 270);
+  --foreground: oklch(0.96 0.05 230);
 
   --card: oklch(0.20 0.05 285);
   --card-foreground: oklch(0.94 0.06 235);
@@ -90,11 +91,12 @@
   --grid-line: oklch(1 0 0 / 0.05);
 }
 
-/* LIGHT — clean premium */
+/* LIGHT — clean premium light blue */
+:root.light,
 .light {
   --radius: 0.875rem;
 
-  --background: oklch(0.985 0.005 280);
+  --background: oklch(0.97 0.03 235);
   --foreground: oklch(0.18 0.04 285);
 
   --card: oklch(1 0 0);
