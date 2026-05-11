@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import hero from "@/assets/hero-drummer.jpg";
 import { CTAButton } from "./CTAButton";
 import { useT } from "@/lib/i18n";
@@ -17,50 +16,30 @@ export function Hero() {
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[920px] rounded-full bg-[var(--magenta)]/25 blur-3xl pointer-events-none animate-pulse-glow" />
 
       <div className="relative mx-auto max-w-5xl text-center flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs md:text-sm font-semibold"
-        >
+        <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs md:text-sm font-semibold">
           <span className="emoji-3d animate-float">🔥</span>
           <span className="text-gradient font-bold">{t("hero_badge")}</span>
-        </motion.div>
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="mt-7 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tight"
-        >
+        <h1 className="mt-7 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tight">
           {t("hero_title_1")}{" "}
           <span className="text-shimmer">{t("hero_title_2")}</span>
           <br className="hidden sm:block" />
           {t("hero_title_3")}{" "}
           <span className="text-gradient-ember">{t("hero_title_4")}</span>
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground"
-        >
+        <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
           {t("hero_subtitle")}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-9 flex flex-col sm:flex-row gap-4 items-center justify-center"
-        >
+        <div className="mt-9 flex flex-col sm:flex-row gap-4 items-center justify-center">
           <CTAButton href="#precios">{t("hero_cta")}</CTAButton>
           <div className="text-sm text-muted-foreground flex items-center gap-1.5">
             <span className="emoji-3d">🛡️</span>
             <span className="font-semibold text-foreground">{t("hero_guarantee")}</span>
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
