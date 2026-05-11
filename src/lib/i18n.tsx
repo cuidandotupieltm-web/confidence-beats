@@ -50,6 +50,7 @@ function applyTheme(theme: Theme) {
   root.classList.remove("dark", "light");
   root.classList.add(theme);
   root.setAttribute("data-theme", theme);
+  root.style.colorScheme = theme;
   if (typeof window !== "undefined") localStorage.setItem("theme", theme);
 }
 
