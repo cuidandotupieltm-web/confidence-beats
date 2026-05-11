@@ -463,14 +463,15 @@
     isolation: isolate;
     overflow: hidden;
     background:
-      radial-gradient(20rem 16rem at 80% 0%, color-mix(in oklab, var(--magenta) 18%, transparent), transparent 68%),
-      linear-gradient(180deg, var(--glass-strong-1), var(--glass-strong-2));
+      radial-gradient(23rem 18rem at 14% -6%, color-mix(in oklab, var(--plan-1, var(--electric)) 36%, transparent), transparent 66%),
+      radial-gradient(24rem 19rem at 96% 8%, color-mix(in oklab, var(--plan-3, var(--magenta)) 34%, transparent), transparent 68%),
+      linear-gradient(145deg, color-mix(in oklab, var(--plan-1, var(--electric)) 18%, var(--glass-strong-1)), color-mix(in oklab, var(--plan-3, var(--magenta)) 13%, var(--glass-strong-2)));
     color: var(--card-foreground);
-    border: 1px solid color-mix(in oklab, var(--foreground) 13%, transparent);
-    border-radius: 1.75rem;
+    border: 1px solid color-mix(in oklab, var(--plan-2, var(--violet)) 42%, transparent);
+    border-radius: 2rem;
     padding: clamp(1.6rem, 3vw, 2.25rem);
     transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-    box-shadow: 0 24px 70px -36px color-mix(in oklab, var(--foreground) 35%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 12%, transparent);
+    box-shadow: 0 26px 80px -34px color-mix(in oklab, var(--plan-2, var(--violet)) 58%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 18%, transparent);
   }
   .price-card-cyan { --plan-1: var(--cyan); --plan-2: var(--electric); --plan-3: var(--violet); }
   .price-card-magenta { --plan-1: var(--violet); --plan-2: var(--magenta); --plan-3: var(--hot-pink); }
@@ -481,10 +482,11 @@
     inset: 0;
     z-index: -1;
     background:
-      radial-gradient(18rem 14rem at 16% 0%, color-mix(in oklab, var(--plan-1) 24%, transparent), transparent 70%),
-      radial-gradient(18rem 14rem at 90% 20%, color-mix(in oklab, var(--plan-3) 22%, transparent), transparent 72%),
-      linear-gradient(135deg, color-mix(in oklab, var(--plan-1) 16%, transparent), transparent 36%, color-mix(in oklab, var(--plan-3) 15%, transparent));
-    opacity: .95;
+      linear-gradient(90deg, color-mix(in oklab, var(--plan-1) 80%, transparent), color-mix(in oklab, var(--plan-2) 72%, transparent), color-mix(in oklab, var(--plan-3) 76%, transparent)) top / 100% 0.55rem no-repeat,
+      radial-gradient(18rem 14rem at 16% 0%, color-mix(in oklab, var(--plan-1) 34%, transparent), transparent 70%),
+      radial-gradient(18rem 14rem at 90% 20%, color-mix(in oklab, var(--plan-3) 32%, transparent), transparent 72%),
+      linear-gradient(135deg, color-mix(in oklab, var(--plan-1) 20%, transparent), transparent 36%, color-mix(in oklab, var(--plan-3) 20%, transparent));
+    opacity: 1;
   }
   .price-card:hover {
     transform: translateY(-4px);
