@@ -478,23 +478,32 @@
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     padding: 0.95rem 1.25rem;
     border-radius: 0.85rem;
-    font-weight: 700; font-size: 0.95rem;
-    background: color-mix(in oklab, var(--foreground) 8%, transparent);
-    color: var(--foreground);
-    border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+    font-weight: 800; font-size: 0.98rem;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--electric) 85%, transparent), color-mix(in oklab, var(--violet) 85%, transparent));
+    color: var(--primary-foreground);
+    border: 0;
+    box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--electric) 70%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 20%, transparent);
     transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
     cursor: pointer;
   }
-  .price-btn:hover { transform: translateY(-1px); background: color-mix(in oklab, var(--foreground) 14%, transparent); }
+  .price-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px color-mix(in oklab, var(--violet) 75%, transparent); }
   .price-btn-featured {
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    color: white; border: 0;
-    box-shadow: 0 12px 32px -10px rgba(124,58,237,0.7);
+    background: linear-gradient(135deg, var(--magenta), var(--violet), var(--electric));
+    color: var(--primary-foreground); border: 0;
+    box-shadow: 0 14px 38px -10px color-mix(in oklab, var(--magenta) 78%, transparent);
   }
   .price-btn-featured:hover {
-    background: linear-gradient(135deg, #8B4BFF, #C760FF);
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 18px 40px -10px rgba(177,75,255,0.8);
+    background: linear-gradient(135deg, var(--rose), var(--magenta), var(--violet));
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 22px 48px -10px color-mix(in oklab, var(--magenta) 90%, transparent);
+  }
+  /* Premium plan colored */
+  .price-card:nth-child(3) .price-btn {
+    background: linear-gradient(135deg, var(--ember), var(--rose), var(--magenta));
+    box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--ember) 70%, transparent);
+  }
+  .price-card:nth-child(3) .price-btn:hover {
+    box-shadow: 0 18px 42px -10px color-mix(in oklab, var(--ember) 90%, transparent);
   }
 
   /* Brand logo mark */
