@@ -11,7 +11,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative py-20 md:py-28 px-6 ${className}`}>
+    <section id={id} className={`section-surface relative py-20 md:py-28 px-6 ${className}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
