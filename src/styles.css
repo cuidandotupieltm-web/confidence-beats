@@ -170,11 +170,11 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(64rem 42rem at 52% -5rem, color-mix(in oklab, var(--hot-pink) 68%, transparent), transparent 66%),
-      radial-gradient(48rem 38rem at 2% 7%, color-mix(in oklab, var(--electric) 58%, transparent), transparent 72%),
-      radial-gradient(48rem 38rem at 98% 24%, color-mix(in oklab, var(--violet) 58%, transparent), transparent 72%),
-      radial-gradient(44rem 34rem at 50% 92%, color-mix(in oklab, var(--ember) 42%, transparent), transparent 72%),
-      linear-gradient(180deg, color-mix(in oklab, var(--violet) 34%, var(--background)), var(--background) 48%);
+      radial-gradient(72rem 46rem at 55% -8rem, color-mix(in oklab, var(--hot-pink) 72%, transparent), transparent 64%),
+      radial-gradient(58rem 42rem at -4% 3%, color-mix(in oklab, var(--electric) 60%, transparent), transparent 70%),
+      radial-gradient(52rem 40rem at 103% 20%, color-mix(in oklab, var(--violet) 62%, transparent), transparent 70%),
+      radial-gradient(46rem 36rem at 50% 94%, color-mix(in oklab, var(--ember) 46%, transparent), transparent 72%),
+      linear-gradient(125deg, color-mix(in oklab, var(--electric) 34%, var(--background)) 0%, color-mix(in oklab, var(--violet) 42%, var(--background)) 42%, color-mix(in oklab, var(--hot-pink) 34%, var(--background)) 100%);
   }
   body::after {
     content: "";
@@ -188,7 +188,15 @@
     mix-blend-mode: screen;
     opacity: .55;
   }
-  .light body::after { mix-blend-mode: multiply; opacity: .35; }
+  .light body::before {
+    background:
+      radial-gradient(72rem 46rem at 55% -8rem, color-mix(in oklab, var(--hot-pink) 42%, transparent), transparent 64%),
+      radial-gradient(58rem 42rem at -4% 3%, color-mix(in oklab, var(--electric) 35%, transparent), transparent 70%),
+      radial-gradient(52rem 40rem at 103% 20%, color-mix(in oklab, var(--violet) 34%, transparent), transparent 70%),
+      radial-gradient(46rem 36rem at 50% 94%, color-mix(in oklab, var(--ember) 26%, transparent), transparent 72%),
+      linear-gradient(125deg, color-mix(in oklab, var(--electric) 16%, var(--background)) 0%, color-mix(in oklab, var(--violet) 22%, var(--background)) 45%, color-mix(in oklab, var(--hot-pink) 18%, var(--background)) 100%);
+  }
+  .light body::after { mix-blend-mode: multiply; opacity: .42; }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: 0;
