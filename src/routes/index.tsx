@@ -51,6 +51,7 @@ function Index() {
       <FAQ />
       <FinalCTA />
       <Footer />
+      <StickyBuyBar />
     </main>
   );
 }
