@@ -166,10 +166,25 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(58rem 36rem at 50% -6rem, color-mix(in oklab, var(--magenta) 44%, transparent), transparent 68%),
-      radial-gradient(40rem 32rem at 8% 10%, color-mix(in oklab, var(--electric) 30%, transparent), transparent 72%),
-      linear-gradient(180deg, color-mix(in oklab, var(--violet) 18%, var(--background)), var(--background) 46%);
+      radial-gradient(60rem 38rem at 50% -4rem, color-mix(in oklab, var(--magenta) 62%, transparent), transparent 65%),
+      radial-gradient(46rem 36rem at 6% 8%, color-mix(in oklab, var(--electric) 48%, transparent), transparent 70%),
+      radial-gradient(44rem 36rem at 96% 30%, color-mix(in oklab, var(--violet) 50%, transparent), transparent 70%),
+      radial-gradient(48rem 38rem at 50% 110%, color-mix(in oklab, var(--ember) 38%, transparent), transparent 70%),
+      linear-gradient(180deg, color-mix(in oklab, var(--violet) 26%, var(--background)), var(--background) 42%);
   }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(30rem 24rem at 20% 80%, color-mix(in oklab, var(--lime) 22%, transparent), transparent 70%),
+      radial-gradient(28rem 22rem at 85% 75%, color-mix(in oklab, var(--rose) 28%, transparent), transparent 70%);
+    mix-blend-mode: screen;
+    opacity: .55;
+  }
+  .light body::after { mix-blend-mode: multiply; opacity: .35; }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: 0;
