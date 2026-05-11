@@ -45,20 +45,25 @@ type ThemeCtx = { theme: Theme; toggle: () => void };
 const ThemeContext = createContext<ThemeCtx | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "dark";
-    const saved = localStorage.getItem("theme") as Theme | null;
-    return saved === "light" || saved === "dark" ? saved : "dark";
-  });
+  const [theme, setTheme] = useState<Theme>("dark");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
+    const root = document.documentElement;
+    const currentTheme = root.classList.contains("light") ? "light" : "dark";
+    setTheme(currentTheme);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted || typeof document === "undefined") return;
     const root = document.documentElement;
     root.classList.remove("dark", "light");
     root.classList.add(theme);
     root.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme, mounted]);
 
   const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
 
