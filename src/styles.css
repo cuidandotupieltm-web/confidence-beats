@@ -83,6 +83,8 @@
   --ember: oklch(0.82 0.19 58);
   --lime: oklch(0.84 0.22 145);
   --rose: oklch(0.72 0.27 10);
+  --cyan: oklch(0.82 0.18 210);
+  --hot-pink: oklch(0.74 0.33 350);
   --gold: oklch(0.86 0.18 82);
   --success: oklch(0.76 0.18 155);
 
@@ -133,6 +135,8 @@
   --ember: oklch(0.70 0.20 55);
   --lime: oklch(0.70 0.21 145);
   --rose: oklch(0.64 0.26 10);
+  --cyan: oklch(0.66 0.19 210);
+  --hot-pink: oklch(0.64 0.31 350);
   --gold: oklch(0.76 0.18 82);
   --success: oklch(0.64 0.17 155);
 
@@ -166,11 +170,11 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(60rem 38rem at 50% -4rem, color-mix(in oklab, var(--magenta) 62%, transparent), transparent 65%),
-      radial-gradient(46rem 36rem at 6% 8%, color-mix(in oklab, var(--electric) 48%, transparent), transparent 70%),
-      radial-gradient(44rem 36rem at 96% 30%, color-mix(in oklab, var(--violet) 50%, transparent), transparent 70%),
-      radial-gradient(48rem 38rem at 50% 110%, color-mix(in oklab, var(--ember) 38%, transparent), transparent 70%),
-      linear-gradient(180deg, color-mix(in oklab, var(--violet) 26%, var(--background)), var(--background) 42%);
+      radial-gradient(64rem 42rem at 52% -5rem, color-mix(in oklab, var(--hot-pink) 68%, transparent), transparent 66%),
+      radial-gradient(48rem 38rem at 2% 7%, color-mix(in oklab, var(--electric) 58%, transparent), transparent 72%),
+      radial-gradient(48rem 38rem at 98% 24%, color-mix(in oklab, var(--violet) 58%, transparent), transparent 72%),
+      radial-gradient(44rem 34rem at 50% 92%, color-mix(in oklab, var(--ember) 42%, transparent), transparent 72%),
+      linear-gradient(180deg, color-mix(in oklab, var(--violet) 34%, var(--background)), var(--background) 48%);
   }
   body::after {
     content: "";
