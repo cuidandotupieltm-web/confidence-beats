@@ -1,41 +1,37 @@
-import { FadeIn, Section, Eyebrow } from "./Section";
-import { Brain, Zap, Target, Music2 } from "lucide-react";
-
-const pillars = [
-  { icon: Zap, title: "Prácticas cortas", desc: "Sesiones de 10–15 minutos diseñadas para principiantes ocupados. Sin agotarte." },
-  { icon: Target, title: "Claridad total", desc: "Cada día sabes exactamente qué tocar, por qué y qué viene después." },
-  { icon: Brain, title: "Sin teoría aburrida", desc: "Aprendes tocando, sintiendo y disfrutando. Cero confusión musical." },
-  { icon: Music2, title: "Resultados rápidos", desc: "En 2 semanas ya estás tocando tus primeros ritmos con confianza real." },
-];
+import { FadeIn, Section, Eyebrow, EmojiIcon } from "./Section";
+import { useT } from "@/lib/i18n";
 
 export function Method() {
+  const { t } = useT();
+  const pillars = [
+    { emoji: "⚡", tone: "electric" as const, t: t("pillar_1_title"), d: t("pillar_1_desc") },
+    { emoji: "🎯", tone: "magenta" as const, t: t("pillar_2_title"), d: t("pillar_2_desc") },
+    { emoji: "🧠", tone: "violet" as const, t: t("pillar_3_title"), d: t("pillar_3_desc") },
+    { emoji: "🚀", tone: "ember" as const, t: t("pillar_4_title"), d: t("pillar_4_desc") },
+  ];
   return (
     <Section id="metodo" className="bg-aurora overflow-hidden">
       <div className="text-center max-w-3xl mx-auto">
-        <FadeIn><Eyebrow>El método</Eyebrow></FadeIn>
+        <FadeIn><Eyebrow>{t("method_eyebrow")}</Eyebrow></FadeIn>
         <FadeIn delay={0.1}>
           <h2 className="mt-6 text-3xl md:text-5xl font-bold">
-            El <span className="text-gradient">Sistema Práctica Inteligente</span>
+            {t("method_title_1")} <span className="text-shimmer">{t("method_title_2")}</span>
           </h2>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Diseñado para que cualquier persona — sin importar edad o experiencia — avance de verdad sin perder tiempo ni motivación.
-          </p>
+          <p className="mt-5 text-lg text-muted-foreground">{t("method_subtitle")}</p>
         </FadeIn>
       </div>
 
       <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {pillars.map(({ icon: Icon, title, desc }, i) => (
-          <FadeIn key={title} delay={i * 0.1}>
-            <div className="relative glass-strong rounded-2xl p-6 h-full overflow-hidden">
-              <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-[var(--electric)]/20 blur-2xl" />
+        {pillars.map((p, i) => (
+          <FadeIn key={p.t} delay={i * 0.1}>
+            <div className="relative glass-strong rounded-2xl p-6 h-full overflow-hidden hover:-translate-y-1 transition">
+              <div className="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-[var(--magenta)]/20 blur-2xl" />
               <div className="relative">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl btn-glow">
-                  <Icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold">{title}</h3>
-                <p className="mt-2 text-muted-foreground">{desc}</p>
+                <EmojiIcon emoji={p.emoji} tone={p.tone} />
+                <h3 className="mt-5 text-xl font-semibold">{p.t}</h3>
+                <p className="mt-2 text-muted-foreground">{p.d}</p>
               </div>
             </div>
           </FadeIn>
