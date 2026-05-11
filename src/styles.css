@@ -42,16 +42,16 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
-/* DARK (default) — deep violet/indigo like the references */
+/* DARK (default) — saturated cover-image palette: deep navy → violet → magenta */
 :root,
 :root.dark,
 .dark {
   --radius: 0.875rem;
 
-  --background: oklch(0.115 0.052 285);
+  --background: oklch(0.095 0.06 278);
   --foreground: oklch(0.98 0.005 270);
 
-  --card: oklch(0.18 0.055 285);
+  --card: oklch(0.17 0.065 285);
   --card-foreground: oklch(0.98 0.005 270);
 
   --popover: oklch(0.17 0.04 275);
@@ -63,8 +63,8 @@
   --secondary: oklch(0.24 0.055 285);
   --secondary-foreground: oklch(0.98 0.005 270);
 
-  --muted: oklch(0.24 0.045 285);
-  --muted-foreground: oklch(0.83 0.025 275);
+  --muted: oklch(0.23 0.055 285);
+  --muted-foreground: oklch(0.88 0.028 275);
 
   --accent: oklch(0.65 0.28 320);
   --accent-foreground: oklch(0.97 0.02 280);
@@ -77,14 +77,14 @@
   --ring: oklch(0.68 0.24 268);
 
   /* Brand neon palette */
-  --electric: oklch(0.76 0.21 245);
-  --violet: oklch(0.68 0.29 295);
-  --magenta: oklch(0.72 0.32 335);
-  --ember: oklch(0.82 0.19 58);
-  --lime: oklch(0.84 0.22 145);
-  --rose: oklch(0.72 0.27 10);
-  --cyan: oklch(0.82 0.18 210);
-  --hot-pink: oklch(0.74 0.33 350);
+  --electric: oklch(0.78 0.24 245);
+  --violet: oklch(0.70 0.31 294);
+  --magenta: oklch(0.75 0.34 330);
+  --ember: oklch(0.84 0.21 55);
+  --lime: oklch(0.86 0.24 145);
+  --rose: oklch(0.74 0.29 18);
+  --cyan: oklch(0.84 0.20 210);
+  --hot-pink: oklch(0.78 0.36 350);
   --gold: oklch(0.86 0.18 82);
   --success: oklch(0.76 0.18 155);
 
@@ -96,12 +96,12 @@
   --grid-line: oklch(1 0 0 / 0.05);
 }
 
-/* LIGHT — soft lavender/pink background like the references */
+/* LIGHT — same colorful cover palette, lifted into a bright lavender/pink canvas */
 :root.light,
 .light {
   --radius: 0.875rem;
 
-  --background: oklch(0.975 0.026 304);
+  --background: oklch(0.955 0.052 305);
   --foreground: oklch(0.15 0.045 285);
 
   --card: oklch(1 0 0);
@@ -116,8 +116,8 @@
   --secondary: oklch(0.96 0.008 280);
   --secondary-foreground: oklch(0.16 0.03 280);
 
-  --muted: oklch(0.96 0.008 280);
-  --muted-foreground: oklch(0.38 0.035 282);
+  --muted: oklch(0.93 0.026 292);
+  --muted-foreground: oklch(0.31 0.055 282);
 
   --accent: oklch(0.6 0.28 320);
   --accent-foreground: oklch(0.99 0 0);
@@ -129,14 +129,14 @@
   --input: oklch(0.18 0.04 285 / 0.14);
   --ring: oklch(0.58 0.24 268);
 
-  --electric: oklch(0.62 0.22 245);
-  --violet: oklch(0.60 0.28 295);
-  --magenta: oklch(0.63 0.30 335);
-  --ember: oklch(0.70 0.20 55);
-  --lime: oklch(0.70 0.21 145);
-  --rose: oklch(0.64 0.26 10);
-  --cyan: oklch(0.66 0.19 210);
-  --hot-pink: oklch(0.64 0.31 350);
+  --electric: oklch(0.62 0.24 245);
+  --violet: oklch(0.62 0.30 295);
+  --magenta: oklch(0.65 0.33 330);
+  --ember: oklch(0.72 0.23 55);
+  --lime: oklch(0.68 0.23 145);
+  --rose: oklch(0.66 0.28 18);
+  --cyan: oklch(0.66 0.21 210);
+  --hot-pink: oklch(0.67 0.34 350);
   --gold: oklch(0.76 0.18 82);
   --success: oklch(0.64 0.17 155);
 
