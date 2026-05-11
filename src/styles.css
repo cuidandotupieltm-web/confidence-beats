@@ -487,8 +487,15 @@
     width: 36px; height: 36px;
     display: inline-flex; align-items: center; justify-content: center;
     border-radius: 12px;
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    box-shadow: 0 8px 22px -6px rgba(124,58,237,0.6), inset 0 1px 0 rgba(255,255,255,0.25);
-    color: white;
+    background: linear-gradient(135deg, var(--electric), var(--violet), var(--magenta));
+    box-shadow: 0 8px 22px -6px color-mix(in oklab, var(--violet) 65%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
+    color: var(--primary-foreground);
+  }
+
+  main section h2 {
+    text-align: center;
+    font-size: clamp(2.75rem, 7vw, 5.8rem);
+    line-height: 1.05;
+    font-weight: 900;
   }
 }
