@@ -209,10 +209,10 @@
 @layer utilities {
   .bg-aurora {
     background:
-      radial-gradient(70% 56% at 18% 0%, color-mix(in oklab, var(--electric) 34%, transparent), transparent 64%),
-      radial-gradient(68% 62% at 88% 10%, color-mix(in oklab, var(--magenta) 42%, transparent), transparent 66%),
-      radial-gradient(48% 42% at 74% 82%, color-mix(in oklab, var(--ember) 24%, transparent), transparent 64%),
-      var(--background);
+      radial-gradient(74% 58% at 15% 0%, color-mix(in oklab, var(--electric) 42%, transparent), transparent 64%),
+      radial-gradient(72% 66% at 91% 8%, color-mix(in oklab, var(--magenta) 54%, transparent), transparent 66%),
+      radial-gradient(50% 44% at 73% 82%, color-mix(in oklab, var(--ember) 34%, transparent), transparent 64%),
+      linear-gradient(135deg, color-mix(in oklab, var(--electric) 18%, var(--background)), color-mix(in oklab, var(--violet) 28%, var(--background)) 48%, color-mix(in oklab, var(--hot-pink) 18%, var(--background)));
   }
   .section-heading {
     font-weight: 900;
@@ -230,9 +230,9 @@
   }
   .glass {
     background:
-      radial-gradient(22rem 16rem at 8% 0%, color-mix(in oklab, var(--electric) 20%, transparent), transparent 68%),
-      radial-gradient(20rem 16rem at 92% 0%, color-mix(in oklab, var(--hot-pink) 18%, transparent), transparent 68%),
-      linear-gradient(180deg, var(--glass-bg-1), var(--glass-bg-2));
+      radial-gradient(26rem 18rem at 8% 0%, color-mix(in oklab, var(--electric) 30%, transparent), transparent 68%),
+      radial-gradient(24rem 18rem at 92% 0%, color-mix(in oklab, var(--hot-pink) 28%, transparent), transparent 68%),
+      linear-gradient(135deg, color-mix(in oklab, var(--primary-foreground) 10%, var(--glass-bg-1)), var(--glass-bg-2));
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid color-mix(in oklab, var(--magenta) 28%, var(--glass-border));
@@ -240,9 +240,9 @@
   }
   .glass-strong {
     background:
-      radial-gradient(26rem 20rem at 0% 0%, color-mix(in oklab, var(--electric) 24%, transparent), transparent 68%),
-      radial-gradient(24rem 18rem at 100% 0%, color-mix(in oklab, var(--magenta) 24%, transparent), transparent 68%),
-      linear-gradient(180deg, var(--glass-strong-1), var(--glass-strong-2));
+      radial-gradient(30rem 22rem at 0% 0%, color-mix(in oklab, var(--electric) 34%, transparent), transparent 68%),
+      radial-gradient(28rem 20rem at 100% 0%, color-mix(in oklab, var(--magenta) 36%, transparent), transparent 68%),
+      linear-gradient(135deg, color-mix(in oklab, var(--primary-foreground) 12%, var(--glass-strong-1)), var(--glass-strong-2));
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid color-mix(in oklab, var(--electric) 26%, var(--glass-border));
