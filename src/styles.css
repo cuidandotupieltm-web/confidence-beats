@@ -166,10 +166,25 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(58rem 36rem at 50% -6rem, color-mix(in oklab, var(--magenta) 44%, transparent), transparent 68%),
-      radial-gradient(40rem 32rem at 8% 10%, color-mix(in oklab, var(--electric) 30%, transparent), transparent 72%),
-      linear-gradient(180deg, color-mix(in oklab, var(--violet) 18%, var(--background)), var(--background) 46%);
+      radial-gradient(60rem 38rem at 50% -4rem, color-mix(in oklab, var(--magenta) 62%, transparent), transparent 65%),
+      radial-gradient(46rem 36rem at 6% 8%, color-mix(in oklab, var(--electric) 48%, transparent), transparent 70%),
+      radial-gradient(44rem 36rem at 96% 30%, color-mix(in oklab, var(--violet) 50%, transparent), transparent 70%),
+      radial-gradient(48rem 38rem at 50% 110%, color-mix(in oklab, var(--ember) 38%, transparent), transparent 70%),
+      linear-gradient(180deg, color-mix(in oklab, var(--violet) 26%, var(--background)), var(--background) 42%);
   }
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(30rem 24rem at 20% 80%, color-mix(in oklab, var(--lime) 22%, transparent), transparent 70%),
+      radial-gradient(28rem 22rem at 85% 75%, color-mix(in oklab, var(--rose) 28%, transparent), transparent 70%);
+    mix-blend-mode: screen;
+    opacity: .55;
+  }
+  .light body::after { mix-blend-mode: multiply; opacity: .35; }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: 0;
@@ -463,23 +478,32 @@
     display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
     padding: 0.95rem 1.25rem;
     border-radius: 0.85rem;
-    font-weight: 700; font-size: 0.95rem;
-    background: color-mix(in oklab, var(--foreground) 8%, transparent);
-    color: var(--foreground);
-    border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+    font-weight: 800; font-size: 0.98rem;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--electric) 85%, transparent), color-mix(in oklab, var(--violet) 85%, transparent));
+    color: var(--primary-foreground);
+    border: 0;
+    box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--electric) 70%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 20%, transparent);
     transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
     cursor: pointer;
   }
-  .price-btn:hover { transform: translateY(-1px); background: color-mix(in oklab, var(--foreground) 14%, transparent); }
+  .price-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px color-mix(in oklab, var(--violet) 75%, transparent); }
   .price-btn-featured {
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    color: white; border: 0;
-    box-shadow: 0 12px 32px -10px rgba(124,58,237,0.7);
+    background: linear-gradient(135deg, var(--magenta), var(--violet), var(--electric));
+    color: var(--primary-foreground); border: 0;
+    box-shadow: 0 14px 38px -10px color-mix(in oklab, var(--magenta) 78%, transparent);
   }
   .price-btn-featured:hover {
-    background: linear-gradient(135deg, #8B4BFF, #C760FF);
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 18px 40px -10px rgba(177,75,255,0.8);
+    background: linear-gradient(135deg, var(--rose), var(--magenta), var(--violet));
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 22px 48px -10px color-mix(in oklab, var(--magenta) 90%, transparent);
+  }
+  /* Premium plan colored */
+  .price-card:nth-child(3) .price-btn {
+    background: linear-gradient(135deg, var(--ember), var(--rose), var(--magenta));
+    box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--ember) 70%, transparent);
+  }
+  .price-card:nth-child(3) .price-btn:hover {
+    box-shadow: 0 18px 42px -10px color-mix(in oklab, var(--ember) 90%, transparent);
   }
 
   /* Brand logo mark */
