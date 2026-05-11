@@ -58,11 +58,14 @@ export function LanguageThemeControls() {
 
       <button
         onClick={toggle}
-        className="inline-flex items-center justify-center h-9 w-9 rounded-full glass hover:scale-110 transition"
+        className="theme-switch"
+        data-theme={theme}
         aria-label="Toggle theme"
         title={theme === "dark" ? "Light mode" : "Dark mode"}
       >
-        <span className="emoji-3d text-base leading-none">{theme === "dark" ? "☀️" : "🌙"}</span>
+        <span className="knob">
+          <span className="emoji-3d">{theme === "dark" ? "🌙" : "☀️"}</span>
+        </span>
       </button>
     </div>
   );
