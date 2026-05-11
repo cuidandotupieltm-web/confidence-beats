@@ -9,7 +9,7 @@ const LANGS: { code: Lang; label: string }[] = [
 
 export function LanguageThemeControls() {
   const { lang, setLang } = useT();
-  const { theme, toggle } = useTheme();
+  const { toggle } = useTheme();
 
   return (
     <div className="flex items-center gap-3">
