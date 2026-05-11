@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 
 interface CTAButtonProps {
   children: React.ReactNode;
@@ -14,12 +13,13 @@ export function CTAButton({ children, variant = "primary", size = "lg", href = "
   return (
     <motion.a
       href={href}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      className={`inline-flex items-center gap-2 rounded-full ${sizeClasses} ${variantClass} font-semibold text-white`}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.97 }}
+      className={`inline-flex items-center gap-2 rounded-full ${sizeClasses} ${variantClass} font-bold text-white shadow-2xl`}
     >
+      <span className="emoji-3d">🚀</span>
       {children}
-      <ArrowRight className="h-5 w-5" />
+      <span className="emoji-3d">→</span>
     </motion.a>
   );
 }

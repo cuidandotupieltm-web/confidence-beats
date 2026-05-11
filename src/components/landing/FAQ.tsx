@@ -5,23 +5,27 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqs = [
-  { q: "¿Sirve si nunca he tocado batería?", a: "Sí. Está diseñado para principiantes absolutos. No necesitas ningún conocimiento previo." },
-  { q: "¿Y si soy mayor o creo que ya es tarde?", a: "Hemos enseñado a estudiantes desde 14 hasta 70 años. La edad no es un límite, la claridad sí lo es." },
-  { q: "¿Cuánto tiempo necesito al día?", a: "Solo 10 a 15 minutos diarios gracias al Sistema Práctica Inteligente. Es perfecto para personas ocupadas." },
-  { q: "¿Necesito tener batería en casa?", a: "Puedes empezar con una almohada o practicador de goma. Igual te mostramos opciones económicas si decides invertir." },
-  { q: "¿Y si me cuesta seguir el ritmo?", a: "El curso va paso a paso. Puedes repetir cada lección las veces que quieras y avanzar a tu ritmo." },
-  { q: "¿Funciona la garantía de verdad?", a: "Sí. Tienes 30 días para probar todo el curso. Si no es para ti, te devolvemos el 100% sin preguntas." },
-];
+import { useT } from "@/lib/i18n";
 
 export function FAQ() {
+  const { t } = useT();
+  const faqs = [
+    { q: t("faq_1_q"), a: t("faq_1_a"), e: "🥁" },
+    { q: t("faq_2_q"), a: t("faq_2_a"), e: "🎂" },
+    { q: t("faq_3_q"), a: t("faq_3_a"), e: "⏱️" },
+    { q: t("faq_4_q"), a: t("faq_4_a"), e: "🏠" },
+    { q: t("faq_5_q"), a: t("faq_5_a"), e: "🎯" },
+    { q: t("faq_6_q"), a: t("faq_6_a"), e: "🛡️" },
+  ];
+
   return (
     <Section id="faq">
       <div className="text-center max-w-3xl mx-auto">
-        <FadeIn><Eyebrow>Resolvamos tus dudas</Eyebrow></FadeIn>
+        <FadeIn><Eyebrow>{t("faq_eyebrow")}</Eyebrow></FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="mt-6 text-3xl md:text-5xl font-bold">Preguntas frecuentes</h2>
+          <h2 className="mt-6 text-3xl md:text-5xl font-bold">
+            <span className="text-shimmer">{t("faq_title")}</span>
+          </h2>
         </FadeIn>
       </div>
 
@@ -30,10 +34,11 @@ export function FAQ() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-white/10 last:border-0 px-4">
-                <AccordionTrigger className="text-left text-base md:text-lg font-semibold hover:no-underline py-5">
-                  {f.q}
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold hover:no-underline py-5 gap-3">
+                  <span className="emoji-3d text-xl">{f.e}</span>
+                  <span className="flex-1">{f.q}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-5">
+                <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-5 pl-10">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
