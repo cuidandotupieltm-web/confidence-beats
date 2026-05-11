@@ -434,10 +434,10 @@
     background-image: linear-gradient(90deg, var(--magenta), var(--rose), var(--ember), var(--cyan));
   }
   .hero-line-neon {
-    background-image: linear-gradient(90deg, var(--primary-foreground), var(--cyan), var(--violet), var(--magenta));
+    background-image: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet), var(--magenta));
   }
   .light .hero-line-neon {
-    background-image: linear-gradient(90deg, var(--foreground), var(--electric), var(--violet), var(--magenta));
+    background-image: linear-gradient(90deg, var(--electric), var(--cyan), var(--violet), var(--hot-pink));
   }
   .hero-line-ember {
     background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--hot-pink), var(--magenta));
