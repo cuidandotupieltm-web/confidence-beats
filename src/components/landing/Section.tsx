@@ -11,7 +11,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative py-20 md:py-28 px-6 ${className}`}>
+    <section id={id} className={`section-surface relative py-20 md:py-28 px-6 ${className}`}>
       <div className="mx-auto max-w-7xl">{children}</div>
     </section>
   );
@@ -63,17 +63,21 @@ export function EmojiIcon({
   className?: string;
 }) {
   const sizes = {
-    sm: "h-10 w-10 text-xl",
-    md: "h-14 w-14 text-2xl",
-    lg: "h-20 w-20 text-4xl",
+    sm: "h-12 w-12 text-2xl",
+    md: "h-16 w-16 text-3xl",
+    lg: "h-22 w-22 text-5xl",
   };
   const tones: Record<string, string> = {
-    electric: "bg-gradient-to-br from-[var(--electric)]/30 to-[var(--violet)]/20 ring-[var(--electric)]/40",
-    violet: "bg-gradient-to-br from-[var(--violet)]/30 to-[var(--magenta)]/20 ring-[var(--violet)]/40",
-    magenta: "bg-gradient-to-br from-[var(--magenta)]/30 to-[var(--ember)]/20 ring-[var(--magenta)]/40",
+    electric:
+      "bg-gradient-to-br from-[var(--electric)]/30 to-[var(--violet)]/20 ring-[var(--electric)]/40",
+    violet:
+      "bg-gradient-to-br from-[var(--violet)]/30 to-[var(--magenta)]/20 ring-[var(--violet)]/40",
+    magenta:
+      "bg-gradient-to-br from-[var(--magenta)]/30 to-[var(--ember)]/20 ring-[var(--magenta)]/40",
     ember: "bg-gradient-to-br from-[var(--ember)]/30 to-[var(--magenta)]/20 ring-[var(--ember)]/40",
     lime: "bg-gradient-to-br from-[var(--lime)]/30 to-[var(--electric)]/20 ring-[var(--lime)]/40",
-    rainbow: "bg-gradient-to-br from-[var(--electric)]/30 via-[var(--magenta)]/25 to-[var(--ember)]/30 ring-[var(--magenta)]/40",
+    rainbow:
+      "bg-gradient-to-br from-[var(--electric)]/30 via-[var(--magenta)]/25 to-[var(--ember)]/30 ring-[var(--magenta)]/40",
   };
   return (
     <span
