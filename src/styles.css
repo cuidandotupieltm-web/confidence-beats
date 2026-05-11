@@ -305,6 +305,12 @@
       inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 18%, transparent),
       0 30px 90px -45px color-mix(in oklab, var(--magenta) 75%, transparent);
   }
+  .section-surface {
+    background:
+      radial-gradient(42rem 30rem at 10% 0%, color-mix(in oklab, var(--electric) 22%, transparent), transparent 68%),
+      radial-gradient(44rem 32rem at 92% 8%, color-mix(in oklab, var(--magenta) 24%, transparent), transparent 68%),
+      linear-gradient(180deg, color-mix(in oklab, var(--background) 72%, transparent), color-mix(in oklab, var(--violet) 12%, var(--background)));
+  }
   .section-heading {
     font-weight: 900;
     line-height: 1.05;
@@ -378,6 +384,13 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+  .text-punch {
+    background: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet), var(--magenta), var(--ember));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 22px color-mix(in oklab, var(--magenta) 32%, transparent));
   }
   .text-gradient-rainbow {
     background: linear-gradient(
