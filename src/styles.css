@@ -361,6 +361,7 @@
   }
   .lang-segmented-btn {
     appearance: none; border: 0; background: transparent;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem;
     padding: 0.56rem 1rem;
     font-size: 0.86rem; font-weight: 800;
     letter-spacing: 0;
