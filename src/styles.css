@@ -42,16 +42,16 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
-/* DARK (default) — Deep Navy / Violet (SaaS Dashboard look) */
+/* DARK (default) — deep violet/indigo like the references */
 :root,
 :root.dark,
 .dark {
   --radius: 0.875rem;
 
-  --background: oklch(0.13 0.035 275);
+  --background: oklch(0.115 0.052 285);
   --foreground: oklch(0.98 0.005 270);
 
-  --card: oklch(0.17 0.04 275);
+  --card: oklch(0.18 0.055 285);
   --card-foreground: oklch(0.98 0.005 270);
 
   --popover: oklch(0.17 0.04 275);
@@ -60,11 +60,11 @@
   --primary: oklch(0.62 0.25 290);
   --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.22 0.04 280);
+  --secondary: oklch(0.24 0.055 285);
   --secondary-foreground: oklch(0.98 0.005 270);
 
-  --muted: oklch(0.22 0.03 280);
-  --muted-foreground: oklch(0.75 0.02 270);
+  --muted: oklch(0.24 0.045 285);
+  --muted-foreground: oklch(0.83 0.025 275);
 
   --accent: oklch(0.65 0.28 320);
   --accent-foreground: oklch(0.97 0.02 280);
@@ -77,11 +77,14 @@
   --ring: oklch(0.68 0.24 268);
 
   /* Brand neon palette */
-  --electric: oklch(0.72 0.22 255);   /* electric blue */
-  --violet: oklch(0.66 0.28 295);     /* violet */
-  --magenta: oklch(0.68 0.32 340);    /* magenta */
-  --ember: oklch(0.82 0.18 65);       /* warm amber */
-  --lime: oklch(0.85 0.22 135);       /* lime accent */
+  --electric: oklch(0.76 0.21 245);
+  --violet: oklch(0.68 0.29 295);
+  --magenta: oklch(0.72 0.32 335);
+  --ember: oklch(0.82 0.19 58);
+  --lime: oklch(0.84 0.22 145);
+  --rose: oklch(0.72 0.27 10);
+  --gold: oklch(0.86 0.18 82);
+  --success: oklch(0.76 0.18 155);
 
   --glass-bg-1: oklch(1 0 0 / 0.08);
   --glass-bg-2: oklch(1 0 0 / 0.03);
@@ -91,13 +94,13 @@
   --grid-line: oklch(1 0 0 / 0.05);
 }
 
-/* LIGHT — clean light gray (SaaS Dashboard) */
+/* LIGHT — soft lavender/pink background like the references */
 :root.light,
 .light {
   --radius: 0.875rem;
 
-  --background: oklch(0.985 0.003 270);
-  --foreground: oklch(0.16 0.03 280);
+  --background: oklch(0.975 0.026 304);
+  --foreground: oklch(0.15 0.045 285);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.16 0.03 280);
@@ -112,7 +115,7 @@
   --secondary-foreground: oklch(0.16 0.03 280);
 
   --muted: oklch(0.96 0.008 280);
-  --muted-foreground: oklch(0.45 0.03 280);
+  --muted-foreground: oklch(0.38 0.035 282);
 
   --accent: oklch(0.6 0.28 320);
   --accent-foreground: oklch(0.99 0 0);
@@ -124,11 +127,14 @@
   --input: oklch(0.18 0.04 285 / 0.14);
   --ring: oklch(0.58 0.24 268);
 
-  --electric: oklch(0.58 0.22 255);
-  --violet: oklch(0.55 0.27 295);
-  --magenta: oklch(0.58 0.30 340);
-  --ember: oklch(0.68 0.20 55);
-  --lime: oklch(0.72 0.22 135);
+  --electric: oklch(0.62 0.22 245);
+  --violet: oklch(0.60 0.28 295);
+  --magenta: oklch(0.63 0.30 335);
+  --ember: oklch(0.70 0.20 55);
+  --lime: oklch(0.70 0.21 145);
+  --rose: oklch(0.64 0.26 10);
+  --gold: oklch(0.76 0.18 82);
+  --success: oklch(0.64 0.17 155);
 
   --glass-bg-1: oklch(1 0 0 / 0.75);
   --glass-bg-2: oklch(1 0 0 / 0.55);
@@ -146,27 +152,54 @@
     scroll-behavior: smooth;
   }
   body {
-    background: var(--color-background);
+    background: var(--background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
   }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(58rem 36rem at 50% -6rem, color-mix(in oklab, var(--magenta) 44%, transparent), transparent 68%),
+      radial-gradient(40rem 32rem at 8% 10%, color-mix(in oklab, var(--electric) 30%, transparent), transparent 72%),
+      linear-gradient(180deg, color-mix(in oklab, var(--violet) 18%, var(--background)), var(--background) 46%);
+  }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+  }
+  p, li, a, button {
+    font-size-adjust: 0.52;
   }
 }
 
 @layer utilities {
   .bg-aurora {
     background:
-      radial-gradient(60% 50% at 15% 10%, color-mix(in oklab, var(--electric) 38%, transparent), transparent 60%),
-      radial-gradient(50% 50% at 85% 20%, color-mix(in oklab, var(--violet) 36%, transparent), transparent 60%),
-      radial-gradient(50% 50% at 80% 80%, color-mix(in oklab, var(--magenta) 32%, transparent), transparent 60%),
-      radial-gradient(45% 45% at 20% 90%, color-mix(in oklab, var(--ember) 25%, transparent), transparent 65%),
+      radial-gradient(70% 56% at 18% 0%, color-mix(in oklab, var(--electric) 34%, transparent), transparent 64%),
+      radial-gradient(68% 62% at 88% 10%, color-mix(in oklab, var(--magenta) 42%, transparent), transparent 66%),
+      radial-gradient(48% 42% at 74% 82%, color-mix(in oklab, var(--ember) 24%, transparent), transparent 64%),
       var(--background);
+  }
+  .section-heading {
+    font-weight: 900;
+    line-height: 1.05;
+    text-align: center;
+    font-size: clamp(2.75rem, 7vw, 5.9rem);
+  }
+  .section-copy {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: clamp(1.12rem, 2vw, 1.35rem);
+    line-height: 1.7;
   }
   .glass {
     background: linear-gradient(180deg, var(--glass-bg-1), var(--glass-bg-2));
@@ -187,13 +220,13 @@
     color: transparent;
   }
   .text-gradient-ember {
-    background: linear-gradient(90deg, var(--ember), var(--magenta));
+    background: linear-gradient(90deg, var(--ember), var(--rose), var(--magenta));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .text-gradient-rainbow {
-    background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta), var(--ember));
+    background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta), var(--rose), var(--ember));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -267,10 +300,10 @@
 
   /* Golden star */
   .star-gold {
-    color: #FFD24A;
+    color: var(--gold);
     text-shadow:
-      0 0 8px rgba(255,210,74,0.7),
-      0 0 18px rgba(255,160,0,0.5);
+      0 0 8px color-mix(in oklab, var(--gold) 70%, transparent),
+      0 0 18px color-mix(in oklab, var(--ember) 55%, transparent);
     font-size: 1.25rem;
     line-height: 1;
     display: inline-block;
@@ -288,13 +321,13 @@
     border-radius: 9999px;
     font-weight: 800;
     font-size: 1.05rem;
-    color: white;
-    background: linear-gradient(90deg, #00C8FF, #7A3CFF, #FF2EA8, #FF7A1A);
+    color: var(--primary-foreground);
+    background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta), var(--rose));
     background-size: 220% 100%;
     box-shadow:
-      0 14px 50px -10px rgba(122,60,255,0.75),
-      0 8px 30px -10px rgba(255,46,168,0.6),
-      0 0 0 1px rgba(255,255,255,0.15) inset;
+      0 14px 50px -10px color-mix(in oklab, var(--violet) 74%, transparent),
+      0 8px 30px -10px color-mix(in oklab, var(--magenta) 64%, transparent),
+      0 0 0 1px color-mix(in oklab, var(--primary-foreground) 16%, transparent) inset;
     animation: shimmer 5s linear infinite, pulse-glow 2.6s ease-in-out infinite;
     transition: transform .25s ease, box-shadow .25s ease;
   }
@@ -303,7 +336,7 @@
     content: "";
     position: absolute; inset: -2px;
     border-radius: 9999px;
-    background: linear-gradient(90deg, #00C8FF, #FF2EA8, #FF7A1A);
+    background: linear-gradient(90deg, var(--electric), var(--magenta), var(--ember));
     filter: blur(18px); opacity: .55; z-index: -1;
   }
 
@@ -311,79 +344,27 @@
   .price-neon {
     font-family: var(--font-display);
     font-weight: 900;
-    background: linear-gradient(90deg, #00E5FF, #B14BFF, #FF2EA8);
+    background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta));
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    text-shadow: 0 0 30px rgba(177,75,255,0.35);
+    text-shadow: 0 0 30px color-mix(in oklab, var(--violet) 35%, transparent);
     letter-spacing: -0.03em;
-  }
-
-  /* Theme switch (sun/moon track) — modern */
-  .theme-switch {
-    position: relative;
-    width: 64px; height: 32px;
-    border-radius: 9999px;
-    background: linear-gradient(90deg, #1B2746, #3A1B5C);
-    border: 1px solid rgba(255,255,255,0.18);
-    cursor: pointer;
-    box-shadow: 0 6px 20px -6px rgba(122,60,255,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-    transition: background .35s ease, box-shadow .35s ease;
-    overflow: hidden;
-  }
-  .theme-switch[data-theme="light"] {
-    background: linear-gradient(90deg, #FFD66B, #FF7A1A);
-    box-shadow: 0 6px 20px -6px rgba(255,122,26,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
-  }
-  .theme-switch .track-icon {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    font-size: 13px; line-height: 1; pointer-events: none;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-  }
-  .theme-switch .track-sun  { left: 8px;  opacity: 0; transition: opacity .3s; }
-  .theme-switch .track-moon { right: 8px; opacity: 1; transition: opacity .3s; }
-  .theme-switch[data-theme="light"] .track-sun  { opacity: 1; }
-  .theme-switch[data-theme="light"] .track-moon { opacity: 0; }
-  .theme-switch .knob {
-    position: absolute; top: 3px; left: 3px;
-    width: 26px; height: 26px; border-radius: 9999px;
-    background: linear-gradient(135deg, #ffffff, #E6EAFF);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08) inset;
-    transition: transform .4s cubic-bezier(.4,1.6,.6,1), background .35s ease;
-  }
-  .theme-switch[data-theme="light"] .knob {
-    transform: translateX(32px);
-    background: linear-gradient(135deg, #FFF6E0, #FFD66B);
-  }
-
-  /* Language pill */
-  .lang-pill {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.45rem 0.85rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    color: var(--foreground);
-    background: linear-gradient(135deg, color-mix(in oklab, var(--electric) 22%, transparent), color-mix(in oklab, var(--magenta) 22%, transparent));
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 4px 18px -6px color-mix(in oklab, var(--violet) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.08);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .lang-pill:hover {
-    transform: translateY(-1px) scale(1.03);
-    box-shadow: 0 8px 24px -6px color-mix(in oklab, var(--magenta) 65%, transparent);
   }
 
   /* Language SEGMENTED control (ES | EN | FR) — SaaS look */
   .lang-segmented {
     display: inline-flex;
-    padding: 4px;
+    padding: 5px;
     border-radius: 9999px;
-    background: color-mix(in oklab, var(--foreground) 8%, transparent);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--foreground) 11%, transparent), color-mix(in oklab, var(--foreground) 5%, transparent));
     border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 12%, transparent);
   }
   .lang-segmented-btn {
     appearance: none; border: 0; background: transparent;
-    padding: 6px 14px;
-    font-size: 12.5px; font-weight: 700;
-    letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem;
+    padding: 0.56rem 1rem;
+    font-size: 0.86rem; font-weight: 800;
+    letter-spacing: 0;
     color: var(--muted-foreground);
     border-radius: 9999px;
     cursor: pointer;
@@ -391,19 +372,19 @@
   }
   .lang-segmented-btn:hover { color: var(--foreground); }
   .lang-segmented-btn.is-active {
-    color: #fff;
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    box-shadow: 0 6px 18px -6px rgba(124,58,237,0.6), 0 0 0 1px rgba(255,255,255,0.12) inset;
+    color: var(--primary-foreground);
+    background: linear-gradient(135deg, var(--violet), var(--magenta));
+    box-shadow: 0 8px 22px -7px color-mix(in oklab, var(--violet) 70%, transparent), 0 0 0 1px color-mix(in oklab, var(--primary-foreground) 16%, transparent) inset;
   }
 
   /* Theme icon button — modern simple */
   .theme-icon-btn {
-    width: 36px; height: 36px;
+    width: 44px; height: 44px;
     display: inline-grid; place-items: center;
     border-radius: 9999px;
-    background: color-mix(in oklab, var(--foreground) 6%, transparent);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--violet) 22%, transparent), color-mix(in oklab, var(--magenta) 18%, transparent));
     border: 1px solid var(--glass-border);
-    color: var(--foreground);
+    color: var(--primary-foreground);
     cursor: pointer;
     transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
@@ -421,47 +402,61 @@
   }
   .theme-icon-btn .theme-sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
   .theme-icon-btn .theme-moon-icon { opacity: 0; transform: scale(.75) rotate(-20deg); }
+  .light .theme-icon-btn { background: linear-gradient(135deg, var(--gold), var(--ember)); }
   .light .theme-icon-btn .theme-sun-icon { opacity: 0; transform: scale(.75) rotate(20deg); }
   .light .theme-icon-btn .theme-moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
 
-  /* Pricing card — clean SaaS Dashboard style */
+  /* Pricing cards — colorful modern reference style */
   .price-card {
     position: relative;
-    background: var(--card);
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      radial-gradient(20rem 16rem at 80% 0%, color-mix(in oklab, var(--magenta) 18%, transparent), transparent 68%),
+      linear-gradient(180deg, var(--glass-strong-1), var(--glass-strong-2));
     color: var(--card-foreground);
-    border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
-    border-radius: 1.5rem;
-    padding: 2rem;
+    border: 1px solid color-mix(in oklab, var(--foreground) 13%, transparent);
+    border-radius: 1.75rem;
+    padding: clamp(1.6rem, 3vw, 2.25rem);
     transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 50px -30px rgba(0,0,0,0.25);
+    box-shadow: 0 24px 70px -36px color-mix(in oklab, var(--foreground) 35%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 12%, transparent);
+  }
+  .price-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--electric) 13%, transparent), transparent 38%, color-mix(in oklab, var(--ember) 12%, transparent));
+    opacity: .75;
   }
   .price-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 24px 60px -25px rgba(124,58,237,0.35);
+    box-shadow: 0 32px 80px -32px color-mix(in oklab, var(--violet) 54%, transparent);
     border-color: color-mix(in oklab, var(--primary) 35%, transparent);
   }
   .price-card-featured {
     border: 2px solid transparent;
     background:
-      linear-gradient(var(--card), var(--card)) padding-box,
-      linear-gradient(135deg, #7C3AED, #B14BFF, #FF2EA8) border-box;
-    box-shadow: 0 30px 70px -25px rgba(124,58,237,0.55);
+      radial-gradient(22rem 18rem at 50% -10%, color-mix(in oklab, var(--magenta) 28%, transparent), transparent 72%) padding-box,
+      linear-gradient(180deg, var(--glass-strong-1), var(--glass-strong-2)) padding-box,
+      linear-gradient(135deg, var(--electric), var(--violet), var(--magenta), var(--ember)) border-box;
+    box-shadow: 0 34px 90px -28px color-mix(in oklab, var(--violet) 72%, transparent);
     transform: translateY(-8px);
   }
   .price-card-featured:hover { transform: translateY(-12px); }
   .price-badge-popular {
     position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    color: white; font-size: 11px; font-weight: 800;
-    padding: 6px 14px; border-radius: 9999px;
-    letter-spacing: 0.04em; text-transform: uppercase;
-    box-shadow: 0 8px 24px -8px rgba(124,58,237,0.7);
+    background: linear-gradient(135deg, var(--electric), var(--violet), var(--magenta));
+    color: var(--primary-foreground); font-size: 0.78rem; font-weight: 900;
+    padding: 0.48rem 1.05rem; border-radius: 9999px;
+    letter-spacing: 0; text-transform: uppercase;
+    box-shadow: 0 10px 28px -8px color-mix(in oklab, var(--violet) 76%, transparent);
   }
   .price-check {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 18px; height: 18px; border-radius: 9999px;
-    background: color-mix(in oklab, #10B981 18%, transparent);
-    color: #10B981; flex-shrink: 0;
+    width: 22px; height: 22px; border-radius: 9999px;
+    background: color-mix(in oklab, var(--success) 20%, transparent);
+    color: var(--success); flex-shrink: 0;
   }
   .price-btn {
     width: 100%;
@@ -492,8 +487,15 @@
     width: 36px; height: 36px;
     display: inline-flex; align-items: center; justify-content: center;
     border-radius: 12px;
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    box-shadow: 0 8px 22px -6px rgba(124,58,237,0.6), inset 0 1px 0 rgba(255,255,255,0.25);
-    color: white;
+    background: linear-gradient(135deg, var(--electric), var(--violet), var(--magenta));
+    box-shadow: 0 8px 22px -6px color-mix(in oklab, var(--violet) 65%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
+    color: var(--primary-foreground);
+  }
+
+  main section h2 {
+    text-align: center;
+    font-size: clamp(2.75rem, 7vw, 5.8rem);
+    line-height: 1.05;
+    font-weight: 900;
   }
 }

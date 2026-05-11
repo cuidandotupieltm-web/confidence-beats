@@ -27,7 +27,7 @@ export function Navbar() {
             <LanguageThemeControls />
             <a
               href="#oferta"
-              className="hidden sm:inline-flex items-center rounded-full btn-glow px-4 py-2 text-sm font-bold text-white"
+              className="hidden sm:inline-flex items-center rounded-full btn-glow px-4 py-2 text-sm font-bold text-primary-foreground"
             >
               ✨ {t("nav_cta")}
             </a>

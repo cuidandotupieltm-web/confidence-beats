@@ -2,6 +2,7 @@ import { FadeIn, Section, Eyebrow } from "./Section";
 import { useT } from "@/lib/i18n";
 
 type Plan = {
+  icon: string;
   tag: string;
   title: string;
   subtitle: string;
@@ -110,6 +111,7 @@ export function Pricing() {
 
   const plans: Plan[] = [
     {
+      icon: "🎁",
       tag: L.bump_tag,
       title: L.bump_title,
       subtitle: L.bump_sub,
@@ -120,6 +122,7 @@ export function Pricing() {
       href: "#oferta",
     },
     {
+      icon: "🥁",
       tag: L.popular,
       title: L.core_title,
       subtitle: L.core_sub,
@@ -132,6 +135,7 @@ export function Pricing() {
       href: "#oferta",
     },
     {
+      icon: "👑",
       tag: "Premium",
       title: L.up_title,
       subtitle: L.up_sub,
@@ -163,18 +167,22 @@ export function Pricing() {
             <div className={`price-card h-full flex flex-col ${p.featured ? "price-card-featured" : ""}`}>
               {p.featured && <div className="price-badge-popular">{p.tag}</div>}
 
-              <h3 className="text-2xl font-bold tracking-tight">{p.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{p.subtitle}</p>
+              <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-electric/25 via-magenta/20 to-ember/25 text-4xl ring-1 ring-border emoji-3d">
+                {p.icon}
+              </div>
+              {!p.featured && <div className="mb-3 text-sm font-black uppercase text-gradient">{p.tag}</div>}
+              <h3 className="text-3xl md:text-4xl font-black tracking-tight">{p.title}</h3>
+              <p className="mt-3 text-base md:text-lg text-muted-foreground leading-relaxed">{p.subtitle}</p>
 
               <div className="mt-6 flex items-baseline gap-2">
                 {p.oldPrice && <span className="text-base text-muted-foreground line-through">{p.oldPrice}</span>}
-                <span className="text-5xl md:text-6xl font-black tracking-tight">{p.price}</span>
-                <span className="text-sm text-muted-foreground">{p.unit}</span>
+                <span className="price-neon text-6xl md:text-7xl">{p.price}</span>
+                <span className="text-base text-muted-foreground">{p.unit}</span>
               </div>
 
               <ul className="mt-7 space-y-3 flex-1">
                 {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-3 text-sm">
+                  <li key={f} className="flex items-start gap-3 text-base leading-relaxed">
                     <Check />
                     <span>{f}</span>
                   </li>
