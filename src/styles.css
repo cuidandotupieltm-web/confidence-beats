@@ -399,7 +399,7 @@
   /* Theme icon button — modern simple */
   .theme-icon-btn {
     width: 36px; height: 36px;
-    display: inline-flex; align-items: center; justify-content: center;
+    display: inline-grid; place-items: center;
     border-radius: 9999px;
     background: color-mix(in oklab, var(--foreground) 6%, transparent);
     border: 1px solid var(--glass-border);
