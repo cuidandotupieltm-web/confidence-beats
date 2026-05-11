@@ -424,17 +424,18 @@
     width: 44px; height: 44px;
     display: inline-grid; place-items: center;
     border-radius: 9999px;
-    background: linear-gradient(135deg, color-mix(in oklab, var(--violet) 22%, transparent), color-mix(in oklab, var(--magenta) 18%, transparent));
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, var(--violet), var(--hot-pink));
+    border: 1px solid color-mix(in oklab, var(--primary-foreground) 18%, transparent);
     color: var(--primary-foreground);
     cursor: pointer;
+    box-shadow: 0 12px 28px -12px color-mix(in oklab, var(--hot-pink) 82%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
     transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
   .theme-icon-btn:hover {
-    background: color-mix(in oklab, var(--primary) 18%, transparent);
-    color: var(--primary);
+    background: linear-gradient(135deg, var(--electric), var(--magenta));
+    color: var(--primary-foreground);
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px -8px color-mix(in oklab, var(--primary) 70%, transparent);
+    box-shadow: 0 16px 34px -12px color-mix(in oklab, var(--electric) 78%, transparent);
   }
   .theme-icon-btn .theme-sun-icon,
   .theme-icon-btn .theme-moon-icon {
@@ -444,7 +445,7 @@
   }
   .theme-icon-btn .theme-sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
   .theme-icon-btn .theme-moon-icon { opacity: 0; transform: scale(.75) rotate(-20deg); }
-  .light .theme-icon-btn { background: linear-gradient(135deg, var(--gold), var(--ember)); }
+  .light .theme-icon-btn { background: linear-gradient(135deg, var(--ember), var(--rose)); }
   .light .theme-icon-btn .theme-sun-icon { opacity: 0; transform: scale(.75) rotate(20deg); }
   .light .theme-icon-btn .theme-moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
 
