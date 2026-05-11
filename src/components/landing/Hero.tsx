@@ -22,11 +22,9 @@ export function Hero() {
         </div>
 
         <h1 className="mt-7 text-[clamp(3.8rem,10vw,8.8rem)] font-black leading-[1.02] tracking-normal text-balance">
-          {t("hero_title_1")}{" "}
-          <span className="text-shimmer">{t("hero_title_2")}</span>
+          {t("hero_title_1")} <span className="text-shimmer">{t("hero_title_2")}</span>
           <br className="hidden sm:block" />
-          {t("hero_title_3")}{" "}
-          <span className="text-gradient-ember">{t("hero_title_4")}</span>
+          {t("hero_title_3")} <span className="text-gradient-ember">{t("hero_title_4")}</span>
         </h1>
 
         <p className="mt-6 max-w-3xl text-xl md:text-2xl leading-relaxed text-muted-foreground">

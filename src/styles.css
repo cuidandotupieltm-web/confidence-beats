@@ -79,12 +79,12 @@
 
   /* Brand neon palette */
   --electric: oklch(0.78 0.24 245);
-  --violet: oklch(0.70 0.31 294);
+  --violet: oklch(0.7 0.31 294);
   --magenta: oklch(0.75 0.34 330);
   --ember: oklch(0.84 0.21 55);
   --lime: oklch(0.86 0.24 145);
   --rose: oklch(0.74 0.29 18);
-  --cyan: oklch(0.84 0.20 210);
+  --cyan: oklch(0.84 0.2 210);
   --hot-pink: oklch(0.78 0.36 350);
   --gold: oklch(0.86 0.18 82);
   --success: oklch(0.76 0.18 155);
@@ -96,10 +96,27 @@
   --glass-strong-2: oklch(1 0 0 / 0.05);
   --grid-line: oklch(1 0 0 / 0.05);
   --cover-gradient:
-    radial-gradient(62rem 42rem at 12% -10%, color-mix(in oklab, var(--electric) 55%, transparent), transparent 68%),
-    radial-gradient(68rem 46rem at 88% 2%, color-mix(in oklab, var(--hot-pink) 64%, transparent), transparent 66%),
-    radial-gradient(54rem 38rem at 50% 92%, color-mix(in oklab, var(--ember) 34%, transparent), transparent 70%),
-    linear-gradient(125deg, oklch(0.16 0.16 252) 0%, oklch(0.17 0.18 286) 46%, oklch(0.22 0.2 322) 100%);
+    radial-gradient(
+      62rem 42rem at 12% -10%,
+      color-mix(in oklab, var(--electric) 55%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      68rem 46rem at 88% 2%,
+      color-mix(in oklab, var(--hot-pink) 64%, transparent),
+      transparent 66%
+    ),
+    radial-gradient(
+      54rem 38rem at 50% 92%,
+      color-mix(in oklab, var(--ember) 34%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      125deg,
+      oklch(0.16 0.16 252) 0%,
+      oklch(0.17 0.18 286) 46%,
+      oklch(0.22 0.2 322) 100%
+    );
 }
 
 /* LIGHT — same colorful cover palette, lifted into a bright lavender/pink canvas */
@@ -136,7 +153,7 @@
   --ring: oklch(0.58 0.24 268);
 
   --electric: oklch(0.62 0.24 245);
-  --violet: oklch(0.62 0.30 295);
+  --violet: oklch(0.62 0.3 295);
   --magenta: oklch(0.65 0.33 330);
   --ember: oklch(0.72 0.23 55);
   --lime: oklch(0.68 0.23 145);
@@ -148,15 +165,32 @@
 
   --glass-bg-1: oklch(1 0 0 / 0.75);
   --glass-bg-2: oklch(1 0 0 / 0.55);
-  --glass-border: oklch(0.18 0.04 285 / 0.10);
+  --glass-border: oklch(0.18 0.04 285 / 0.1);
   --glass-strong-1: oklch(1 0 0 / 0.92);
   --glass-strong-2: oklch(1 0 0 / 0.75);
   --grid-line: oklch(0.18 0.04 285 / 0.06);
   --cover-gradient:
-    radial-gradient(58rem 38rem at 8% -6%, color-mix(in oklab, var(--electric) 34%, transparent), transparent 68%),
-    radial-gradient(64rem 42rem at 92% 0%, color-mix(in oklab, var(--hot-pink) 38%, transparent), transparent 66%),
-    radial-gradient(48rem 34rem at 50% 96%, color-mix(in oklab, var(--ember) 22%, transparent), transparent 72%),
-    linear-gradient(125deg, oklch(0.9 0.11 250) 0%, oklch(0.89 0.12 292) 46%, oklch(0.92 0.12 327) 100%);
+    radial-gradient(
+      58rem 38rem at 8% -6%,
+      color-mix(in oklab, var(--electric) 34%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      64rem 42rem at 92% 0%,
+      color-mix(in oklab, var(--hot-pink) 38%, transparent),
+      transparent 66%
+    ),
+    radial-gradient(
+      48rem 34rem at 50% 96%,
+      color-mix(in oklab, var(--ember) 22%, transparent),
+      transparent 72%
+    ),
+    linear-gradient(
+      125deg,
+      oklch(0.9 0.11 250) 0%,
+      oklch(0.89 0.12 292) 46%,
+      oklch(0.92 0.12 327) 100%
+    );
 }
 
 @layer base {
@@ -174,7 +208,9 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition:
+      background-color 0.4s ease,
+      color 0.4s ease;
   }
   body::before {
     content: "";
@@ -183,8 +219,16 @@
     z-index: -1;
     pointer-events: none;
     background:
-      repeating-linear-gradient(90deg, transparent 0 78px, color-mix(in oklab, var(--grid-line) 70%, transparent) 78px 79px),
-      repeating-linear-gradient(0deg, transparent 0 78px, color-mix(in oklab, var(--grid-line) 70%, transparent) 78px 79px),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 78px,
+        color-mix(in oklab, var(--grid-line) 70%, transparent) 78px 79px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 78px,
+        color-mix(in oklab, var(--grid-line) 70%, transparent) 78px 79px
+      ),
       var(--cover-gradient);
     opacity: 1;
   }
@@ -195,23 +239,48 @@
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(32rem 24rem at 18% 72%, color-mix(in oklab, var(--lime) 20%, transparent), transparent 70%),
-      radial-gradient(30rem 22rem at 88% 76%, color-mix(in oklab, var(--rose) 32%, transparent), transparent 70%);
+      radial-gradient(
+        32rem 24rem at 18% 72%,
+        color-mix(in oklab, var(--lime) 20%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        30rem 22rem at 88% 76%,
+        color-mix(in oklab, var(--rose) 32%, transparent),
+        transparent 70%
+      );
     mix-blend-mode: screen;
-    opacity: .7;
+    opacity: 0.7;
   }
   .light body::before {
     background:
-      repeating-linear-gradient(90deg, transparent 0 78px, color-mix(in oklab, var(--grid-line) 85%, transparent) 78px 79px),
-      repeating-linear-gradient(0deg, transparent 0 78px, color-mix(in oklab, var(--grid-line) 85%, transparent) 78px 79px),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 78px,
+        color-mix(in oklab, var(--grid-line) 85%, transparent) 78px 79px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 78px,
+        color-mix(in oklab, var(--grid-line) 85%, transparent) 78px 79px
+      ),
       var(--cover-gradient);
   }
-  .light body::after { mix-blend-mode: multiply; opacity: .42; }
-  h1, h2, h3, h4 {
+  .light body::after {
+    mix-blend-mode: multiply;
+    opacity: 0.42;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: 0;
   }
-  p, li, a, button {
+  p,
+  li,
+  a,
+  button {
     font-size-adjust: 0.52;
   }
 }
@@ -224,7 +293,12 @@
     position: relative;
     overflow: hidden;
     background:
-      linear-gradient(135deg, color-mix(in oklab, var(--electric) 28%, transparent), transparent 38%, color-mix(in oklab, var(--hot-pink) 28%, transparent)),
+      linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--electric) 28%, transparent),
+        transparent 38%,
+        color-mix(in oklab, var(--hot-pink) 28%, transparent)
+      ),
       var(--cover-gradient);
     border: 1px solid color-mix(in oklab, var(--primary-foreground) 18%, transparent);
     box-shadow:
@@ -247,23 +321,51 @@
   }
   .glass {
     background:
-      radial-gradient(26rem 18rem at 8% 0%, color-mix(in oklab, var(--electric) 40%, transparent), transparent 68%),
-      radial-gradient(24rem 18rem at 92% 0%, color-mix(in oklab, var(--hot-pink) 36%, transparent), transparent 68%),
-      linear-gradient(135deg, color-mix(in oklab, var(--primary-foreground) 16%, var(--glass-bg-1)), var(--glass-bg-2));
+      radial-gradient(
+        26rem 18rem at 8% 0%,
+        color-mix(in oklab, var(--electric) 40%, transparent),
+        transparent 68%
+      ),
+      radial-gradient(
+        24rem 18rem at 92% 0%,
+        color-mix(in oklab, var(--hot-pink) 36%, transparent),
+        transparent 68%
+      ),
+      linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--primary-foreground) 16%, var(--glass-bg-1)),
+        var(--glass-bg-2)
+      );
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid color-mix(in oklab, var(--magenta) 28%, var(--glass-border));
-    box-shadow: inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 16%, transparent), 0 18px 55px -34px color-mix(in oklab, var(--violet) 70%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 16%, transparent),
+      0 18px 55px -34px color-mix(in oklab, var(--violet) 70%, transparent);
   }
   .glass-strong {
     background:
-      radial-gradient(30rem 22rem at 0% 0%, color-mix(in oklab, var(--electric) 45%, transparent), transparent 68%),
-      radial-gradient(28rem 20rem at 100% 0%, color-mix(in oklab, var(--magenta) 45%, transparent), transparent 68%),
-      linear-gradient(135deg, color-mix(in oklab, var(--primary-foreground) 18%, var(--glass-strong-1)), var(--glass-strong-2));
+      radial-gradient(
+        30rem 22rem at 0% 0%,
+        color-mix(in oklab, var(--electric) 45%, transparent),
+        transparent 68%
+      ),
+      radial-gradient(
+        28rem 20rem at 100% 0%,
+        color-mix(in oklab, var(--magenta) 45%, transparent),
+        transparent 68%
+      ),
+      linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--primary-foreground) 18%, var(--glass-strong-1)),
+        var(--glass-strong-2)
+      );
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid color-mix(in oklab, var(--electric) 26%, var(--glass-border));
-    box-shadow: inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 18%, transparent), 0 24px 70px -38px color-mix(in oklab, var(--magenta) 70%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 18%, transparent),
+      0 24px 70px -38px color-mix(in oklab, var(--magenta) 70%, transparent);
   }
   .text-gradient {
     background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta));
@@ -278,18 +380,34 @@
     color: transparent;
   }
   .text-gradient-rainbow {
-    background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta), var(--rose), var(--ember));
+    background: linear-gradient(
+      90deg,
+      var(--electric),
+      var(--violet),
+      var(--magenta),
+      var(--rose),
+      var(--ember)
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .btn-glow {
-    background: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet), var(--hot-pink));
+    background: linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--electric),
+      var(--violet),
+      var(--hot-pink)
+    );
     background-size: 200% 100%;
     box-shadow:
       0 14px 42px -8px color-mix(in oklab, var(--electric) 74%, transparent),
       0 0 0 1px color-mix(in oklab, var(--primary-foreground) 22%, transparent) inset;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background-position 0.6s ease;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background-position 0.6s ease;
   }
   .btn-glow:hover {
     transform: translateY(-2px);
@@ -316,27 +434,64 @@
   }
   .emoji-3d {
     display: inline-block;
-    filter: saturate(1.45) drop-shadow(0 6px 14px color-mix(in oklab, var(--violet) 55%, transparent));
-    text-shadow: 0 2px 0 rgba(0,0,0,0.15);
+    filter: saturate(1.45)
+      drop-shadow(0 6px 14px color-mix(in oklab, var(--violet) 55%, transparent));
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
   }
-  .chip-electric { background: color-mix(in oklab, var(--electric) 18%, transparent); color: var(--electric); }
-  .chip-violet   { background: color-mix(in oklab, var(--violet) 18%, transparent); color: var(--violet); }
-  .chip-magenta  { background: color-mix(in oklab, var(--magenta) 18%, transparent); color: var(--magenta); }
-  .chip-ember    { background: color-mix(in oklab, var(--ember) 22%, transparent); color: var(--ember); }
-  .chip-lime     { background: color-mix(in oklab, var(--lime) 22%, transparent); color: var(--lime); }
+  .chip-electric {
+    background: color-mix(in oklab, var(--electric) 18%, transparent);
+    color: var(--electric);
+  }
+  .chip-violet {
+    background: color-mix(in oklab, var(--violet) 18%, transparent);
+    color: var(--violet);
+  }
+  .chip-magenta {
+    background: color-mix(in oklab, var(--magenta) 18%, transparent);
+    color: var(--magenta);
+  }
+  .chip-ember {
+    background: color-mix(in oklab, var(--ember) 22%, transparent);
+    color: var(--ember);
+  }
+  .chip-lime {
+    background: color-mix(in oklab, var(--lime) 22%, transparent);
+    color: var(--lime);
+  }
 
   @keyframes pulse-glow {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
+    0%,
+    100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
   }
-  .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
 
   @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
   }
   .text-shimmer {
-    background: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet), var(--magenta), var(--ember), var(--cyan));
+    background: linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--electric),
+      var(--violet),
+      var(--magenta),
+      var(--ember),
+      var(--cyan)
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -345,10 +500,17 @@
   }
 
   @keyframes float-y {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
   }
-  .animate-float { animation: float-y 4s ease-in-out infinite; }
+  .animate-float {
+    animation: float-y 4s ease-in-out infinite;
+  }
 
   /* Golden star */
   .star-gold {
@@ -360,7 +522,9 @@
     line-height: 1;
     display: inline-block;
   }
-  .star-gold-lg { font-size: 1.75rem; }
+  .star-gold-lg {
+    font-size: 1.75rem;
+  }
 
   /* Mega buy button */
   .btn-mega {
@@ -374,24 +538,43 @@
     font-weight: 900;
     font-size: 1.05rem;
     color: var(--primary-foreground);
-    background: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet), var(--hot-pink), var(--rose));
+    background: linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--electric),
+      var(--violet),
+      var(--hot-pink),
+      var(--rose)
+    );
     background-size: 220% 100%;
     box-shadow:
       0 18px 55px -8px color-mix(in oklab, var(--electric) 76%, transparent),
       0 12px 36px -8px color-mix(in oklab, var(--hot-pink) 70%, transparent),
       0 0 0 1px color-mix(in oklab, var(--primary-foreground) 16%, transparent) inset;
-    animation: shimmer 5s linear infinite, pulse-glow 2.6s ease-in-out infinite;
-    transition: transform .25s ease, box-shadow .25s ease;
+    animation:
+      shimmer 5s linear infinite,
+      pulse-glow 2.6s ease-in-out infinite;
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
     overflow: visible;
   }
-  .btn-mega > span { position: relative; z-index: 1; }
-  .btn-mega:hover { transform: translateY(-2px) scale(1.02); }
+  .btn-mega > span {
+    position: relative;
+    z-index: 1;
+  }
+  .btn-mega:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
   .btn-mega::after {
     content: "";
-    position: absolute; inset: -2px;
+    position: absolute;
+    inset: -2px;
     border-radius: 9999px;
     background: linear-gradient(90deg, var(--electric), var(--magenta), var(--ember));
-    filter: blur(18px); opacity: .75; z-index: 0;
+    filter: blur(18px);
+    opacity: 0.75;
+    z-index: 0;
   }
   .btn-icon-bubble,
   .btn-arrow-bubble {
@@ -403,18 +586,33 @@
     height: 2.15rem;
     border-radius: 9999px;
     color: var(--primary-foreground);
-    background: linear-gradient(135deg, color-mix(in oklab, var(--primary-foreground) 26%, transparent), color-mix(in oklab, var(--primary-foreground) 10%, transparent));
-    box-shadow: inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 32%, transparent), 0 8px 18px -9px color-mix(in oklab, var(--background) 80%, transparent);
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--primary-foreground) 26%, transparent),
+      color-mix(in oklab, var(--primary-foreground) 10%, transparent)
+    );
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 32%, transparent),
+      0 8px 18px -9px color-mix(in oklab, var(--background) 80%, transparent);
   }
-  .btn-icon-bubble-sm { width: 1.6rem; height: 1.6rem; font-size: .85rem; }
-  .btn-arrow-bubble { font-size: 1.15rem; font-weight: 900; }
+  .btn-icon-bubble-sm {
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 0.85rem;
+  }
+  .btn-arrow-bubble {
+    font-size: 1.15rem;
+    font-weight: 900;
+  }
 
   /* Neon price */
   .price-neon {
     font-family: var(--font-display);
     font-weight: 900;
     background: linear-gradient(90deg, var(--electric), var(--violet), var(--magenta));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     text-shadow: 0 0 30px color-mix(in oklab, var(--violet) 35%, transparent);
     letter-spacing: 0;
   }
@@ -424,39 +622,65 @@
     display: inline-flex;
     padding: 5px;
     border-radius: 9999px;
-    background: linear-gradient(180deg, color-mix(in oklab, var(--foreground) 11%, transparent), color-mix(in oklab, var(--foreground) 5%, transparent));
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--foreground) 11%, transparent),
+      color-mix(in oklab, var(--foreground) 5%, transparent)
+    );
     border: 1px solid var(--glass-border);
     box-shadow: inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 12%, transparent);
   }
   .lang-segmented-btn {
-    appearance: none; border: 0; background: transparent;
-    display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
     padding: 0.56rem 1rem;
-    font-size: 0.86rem; font-weight: 800;
+    font-size: 0.86rem;
+    font-weight: 800;
     letter-spacing: 0;
     color: var(--muted-foreground);
     border-radius: 9999px;
     cursor: pointer;
-    transition: color .2s ease, background .25s ease, box-shadow .25s ease, transform .15s ease;
+    transition:
+      color 0.2s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.15s ease;
   }
-  .lang-segmented-btn:hover { color: var(--foreground); }
+  .lang-segmented-btn:hover {
+    color: var(--foreground);
+  }
   .lang-segmented-btn.is-active {
     color: var(--primary-foreground);
     background: linear-gradient(135deg, var(--violet), var(--magenta));
-    box-shadow: 0 8px 22px -7px color-mix(in oklab, var(--violet) 70%, transparent), 0 0 0 1px color-mix(in oklab, var(--primary-foreground) 16%, transparent) inset;
+    box-shadow:
+      0 8px 22px -7px color-mix(in oklab, var(--violet) 70%, transparent),
+      0 0 0 1px color-mix(in oklab, var(--primary-foreground) 16%, transparent) inset;
   }
 
   /* Theme icon button — modern simple */
   .theme-icon-btn {
-    width: 44px; height: 44px;
-    display: inline-grid; place-items: center;
+    width: 44px;
+    height: 44px;
+    display: inline-grid;
+    place-items: center;
     border-radius: 9999px;
     background: linear-gradient(135deg, var(--violet), var(--hot-pink));
     border: 1px solid color-mix(in oklab, var(--primary-foreground) 18%, transparent);
     color: var(--primary-foreground);
     cursor: pointer;
-    box-shadow: 0 12px 28px -12px color-mix(in oklab, var(--hot-pink) 82%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
-    transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+    box-shadow:
+      0 12px 28px -12px color-mix(in oklab, var(--hot-pink) 82%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
   .theme-icon-btn:hover {
     background: linear-gradient(135deg, var(--electric), var(--magenta));
@@ -468,13 +692,29 @@
   .theme-icon-btn .theme-moon-icon {
     grid-area: 1 / 1;
     display: inline-flex;
-    transition: opacity .2s ease, transform .2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
   }
-  .theme-icon-btn .theme-sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
-  .theme-icon-btn .theme-moon-icon { opacity: 0; transform: scale(.75) rotate(-20deg); }
-  .light .theme-icon-btn { background: linear-gradient(135deg, var(--ember), var(--rose)); }
-  .light .theme-icon-btn .theme-sun-icon { opacity: 0; transform: scale(.75) rotate(20deg); }
-  .light .theme-icon-btn .theme-moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+  .theme-icon-btn .theme-sun-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  .theme-icon-btn .theme-moon-icon {
+    opacity: 0;
+    transform: scale(0.75) rotate(-20deg);
+  }
+  .light .theme-icon-btn {
+    background: linear-gradient(135deg, var(--ember), var(--rose));
+  }
+  .light .theme-icon-btn .theme-sun-icon {
+    opacity: 0;
+    transform: scale(0.75) rotate(20deg);
+  }
+  .light .theme-icon-btn .theme-moon-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
 
   /* Pricing cards — colorful modern reference style */
   .price-card {
@@ -482,29 +722,77 @@
     isolation: isolate;
     overflow: hidden;
     background:
-      radial-gradient(23rem 18rem at 14% -6%, color-mix(in oklab, var(--plan-1, var(--electric)) 36%, transparent), transparent 66%),
-      radial-gradient(24rem 19rem at 96% 8%, color-mix(in oklab, var(--plan-3, var(--magenta)) 34%, transparent), transparent 68%),
-      linear-gradient(145deg, color-mix(in oklab, var(--plan-1, var(--electric)) 18%, var(--glass-strong-1)), color-mix(in oklab, var(--plan-3, var(--magenta)) 13%, var(--glass-strong-2)));
+      radial-gradient(
+        23rem 18rem at 14% -6%,
+        color-mix(in oklab, var(--plan-1, var(--electric)) 36%, transparent),
+        transparent 66%
+      ),
+      radial-gradient(
+        24rem 19rem at 96% 8%,
+        color-mix(in oklab, var(--plan-3, var(--magenta)) 34%, transparent),
+        transparent 68%
+      ),
+      linear-gradient(
+        145deg,
+        color-mix(in oklab, var(--plan-1, var(--electric)) 18%, var(--glass-strong-1)),
+        color-mix(in oklab, var(--plan-3, var(--magenta)) 13%, var(--glass-strong-2))
+      );
     color: var(--card-foreground);
     border: 1px solid color-mix(in oklab, var(--plan-2, var(--violet)) 42%, transparent);
     border-radius: 2rem;
     padding: clamp(1.6rem, 3vw, 2.25rem);
-    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-    box-shadow: 0 26px 80px -34px color-mix(in oklab, var(--plan-2, var(--violet)) 58%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 18%, transparent);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+    box-shadow:
+      0 26px 80px -34px color-mix(in oklab, var(--plan-2, var(--violet)) 58%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 18%, transparent);
   }
-  .price-card-cyan { --plan-1: var(--cyan); --plan-2: var(--electric); --plan-3: var(--violet); }
-  .price-card-magenta { --plan-1: var(--violet); --plan-2: var(--magenta); --plan-3: var(--hot-pink); }
-  .price-card-ember { --plan-1: var(--ember); --plan-2: var(--rose); --plan-3: var(--magenta); }
+  .price-card-cyan {
+    --plan-1: var(--cyan);
+    --plan-2: var(--electric);
+    --plan-3: var(--violet);
+  }
+  .price-card-magenta {
+    --plan-1: var(--violet);
+    --plan-2: var(--magenta);
+    --plan-3: var(--hot-pink);
+  }
+  .price-card-ember {
+    --plan-1: var(--ember);
+    --plan-2: var(--rose);
+    --plan-3: var(--magenta);
+  }
   .price-card::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
     background:
-      linear-gradient(90deg, color-mix(in oklab, var(--plan-1) 80%, transparent), color-mix(in oklab, var(--plan-2) 72%, transparent), color-mix(in oklab, var(--plan-3) 76%, transparent)) top / 100% 0.55rem no-repeat,
-      radial-gradient(18rem 14rem at 16% 0%, color-mix(in oklab, var(--plan-1) 34%, transparent), transparent 70%),
-      radial-gradient(18rem 14rem at 90% 20%, color-mix(in oklab, var(--plan-3) 32%, transparent), transparent 72%),
-      linear-gradient(135deg, color-mix(in oklab, var(--plan-1) 20%, transparent), transparent 36%, color-mix(in oklab, var(--plan-3) 20%, transparent));
+      linear-gradient(
+          90deg,
+          color-mix(in oklab, var(--plan-1) 80%, transparent),
+          color-mix(in oklab, var(--plan-2) 72%, transparent),
+          color-mix(in oklab, var(--plan-3) 76%, transparent)
+        )
+        top / 100% 0.55rem no-repeat,
+      radial-gradient(
+        18rem 14rem at 16% 0%,
+        color-mix(in oklab, var(--plan-1) 34%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        18rem 14rem at 90% 20%,
+        color-mix(in oklab, var(--plan-3) 32%, transparent),
+        transparent 72%
+      ),
+      linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--plan-1) 20%, transparent),
+        transparent 36%,
+        color-mix(in oklab, var(--plan-3) 20%, transparent)
+      );
     opacity: 1;
   }
   .price-card:hover {
@@ -515,20 +803,47 @@
   .price-card-featured {
     border: 2px solid transparent;
     background:
-      radial-gradient(24rem 19rem at 50% -10%, color-mix(in oklab, var(--magenta) 46%, transparent), transparent 72%) padding-box,
-      radial-gradient(20rem 16rem at 95% 12%, color-mix(in oklab, var(--electric) 34%, transparent), transparent 70%) padding-box,
-      linear-gradient(145deg, color-mix(in oklab, var(--violet) 22%, var(--glass-strong-1)), color-mix(in oklab, var(--hot-pink) 18%, var(--glass-strong-2))) padding-box,
-      linear-gradient(135deg, var(--electric), var(--violet), var(--magenta), var(--ember)) border-box;
-    box-shadow: 0 36px 100px -26px color-mix(in oklab, var(--magenta) 76%, transparent), 0 18px 55px -30px color-mix(in oklab, var(--electric) 70%, transparent);
+      radial-gradient(
+          24rem 19rem at 50% -10%,
+          color-mix(in oklab, var(--magenta) 46%, transparent),
+          transparent 72%
+        )
+        padding-box,
+      radial-gradient(
+          20rem 16rem at 95% 12%,
+          color-mix(in oklab, var(--electric) 34%, transparent),
+          transparent 70%
+        )
+        padding-box,
+      linear-gradient(
+          145deg,
+          color-mix(in oklab, var(--violet) 22%, var(--glass-strong-1)),
+          color-mix(in oklab, var(--hot-pink) 18%, var(--glass-strong-2))
+        )
+        padding-box,
+      linear-gradient(135deg, var(--electric), var(--violet), var(--magenta), var(--ember))
+        border-box;
+    box-shadow:
+      0 36px 100px -26px color-mix(in oklab, var(--magenta) 76%, transparent),
+      0 18px 55px -30px color-mix(in oklab, var(--electric) 70%, transparent);
     transform: translateY(-8px);
   }
-  .price-card-featured:hover { transform: translateY(-12px); }
+  .price-card-featured:hover {
+    transform: translateY(-12px);
+  }
   .price-badge-popular {
-    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
     background: linear-gradient(135deg, var(--electric), var(--violet), var(--magenta));
-    color: var(--primary-foreground); font-size: 0.78rem; font-weight: 900;
-    padding: 0.48rem 1.05rem; border-radius: 9999px;
-    letter-spacing: 0; text-transform: uppercase;
+    color: var(--primary-foreground);
+    font-size: 0.78rem;
+    font-weight: 900;
+    padding: 0.48rem 1.05rem;
+    border-radius: 9999px;
+    letter-spacing: 0;
+    text-transform: uppercase;
     box-shadow: 0 10px 28px -8px color-mix(in oklab, var(--violet) 76%, transparent);
   }
   .price-icon {
@@ -541,46 +856,81 @@
     border-radius: 1.25rem;
     font-size: 2.35rem;
     background: linear-gradient(135deg, var(--plan-1), var(--plan-2), var(--plan-3));
-    box-shadow: 0 18px 38px -14px color-mix(in oklab, var(--plan-2) 84%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 28%, transparent);
+    box-shadow:
+      0 18px 38px -14px color-mix(in oklab, var(--plan-2) 84%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 28%, transparent);
     filter: saturate(1.25);
   }
-  .price-card-cyan .price-neon { background-image: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet)); }
-  .price-card-magenta .price-neon { background-image: linear-gradient(90deg, var(--electric), var(--magenta), var(--hot-pink)); }
-  .price-card-ember .price-neon { background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--magenta)); }
+  .price-card-cyan .price-neon {
+    background-image: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet));
+  }
+  .price-card-magenta .price-neon {
+    background-image: linear-gradient(90deg, var(--electric), var(--magenta), var(--hot-pink));
+  }
+  .price-card-ember .price-neon {
+    background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--magenta));
+  }
   .price-card h3,
   .glass h3,
   .glass-strong h3,
   .glass h4,
   .glass-strong h4 {
-    background: linear-gradient(90deg, var(--foreground), color-mix(in oklab, var(--plan-2, var(--magenta)) 55%, var(--foreground)));
+    background: linear-gradient(
+      90deg,
+      var(--foreground),
+      color-mix(in oklab, var(--plan-2, var(--magenta)) 55%, var(--foreground))
+    );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .price-check {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 22px; height: 22px; border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
     background: linear-gradient(135deg, var(--lime), var(--cyan));
-    color: var(--primary-foreground); flex-shrink: 0;
+    color: var(--primary-foreground);
+    flex-shrink: 0;
     box-shadow: 0 8px 18px -10px color-mix(in oklab, var(--lime) 80%, transparent);
   }
   .price-btn {
     width: 100%;
-    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 0.95rem 1.25rem;
     border-radius: 0.85rem;
-    font-weight: 800; font-size: 0.98rem;
-    background: linear-gradient(135deg, var(--plan-1, var(--electric)), var(--plan-2, var(--violet)), var(--plan-3, var(--magenta)));
+    font-weight: 800;
+    font-size: 0.98rem;
+    background: linear-gradient(
+      135deg,
+      var(--plan-1, var(--electric)),
+      var(--plan-2, var(--violet)),
+      var(--plan-3, var(--magenta))
+    );
     color: var(--primary-foreground);
     border: 0;
-    box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--electric) 70%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 20%, transparent);
-    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    box-shadow:
+      0 12px 30px -10px color-mix(in oklab, var(--electric) 70%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 20%, transparent);
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
     cursor: pointer;
   }
-  .price-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -10px color-mix(in oklab, var(--violet) 75%, transparent); }
+  .price-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px -10px color-mix(in oklab, var(--violet) 75%, transparent);
+  }
   .price-btn-featured {
     background: linear-gradient(135deg, var(--magenta), var(--violet), var(--electric));
-    color: var(--primary-foreground); border: 0;
+    color: var(--primary-foreground);
+    border: 0;
     box-shadow: 0 14px 38px -10px color-mix(in oklab, var(--magenta) 78%, transparent);
   }
   .price-btn-featured:hover {
@@ -599,11 +949,16 @@
 
   /* Brand logo mark */
   .brand-logo {
-    width: 36px; height: 36px;
-    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 12px;
     background: linear-gradient(135deg, var(--electric), var(--violet), var(--magenta));
-    box-shadow: 0 8px 22px -6px color-mix(in oklab, var(--violet) 65%, transparent), inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
+    box-shadow:
+      0 8px 22px -6px color-mix(in oklab, var(--violet) 65%, transparent),
+      inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 25%, transparent);
     color: var(--primary-foreground);
   }
 
@@ -621,9 +976,18 @@
     font-weight: 850;
   }
   @media (max-width: 640px) {
-    .lang-segmented-btn { padding: 0.52rem 0.72rem; }
-    .btn-mega { width: 100%; max-width: 22rem; }
-    .price-card-featured { transform: none; }
-    .price-card-featured:hover { transform: translateY(-4px); }
+    .lang-segmented-btn {
+      padding: 0.52rem 0.72rem;
+    }
+    .btn-mega {
+      width: 100%;
+      max-width: 22rem;
+    }
+    .price-card-featured {
+      transform: none;
+    }
+    .price-card-featured:hover {
+      transform: translateY(-4px);
+    }
   }
 }

@@ -68,12 +68,16 @@ export function EmojiIcon({
     lg: "h-22 w-22 text-5xl",
   };
   const tones: Record<string, string> = {
-    electric: "bg-gradient-to-br from-[var(--electric)]/30 to-[var(--violet)]/20 ring-[var(--electric)]/40",
-    violet: "bg-gradient-to-br from-[var(--violet)]/30 to-[var(--magenta)]/20 ring-[var(--violet)]/40",
-    magenta: "bg-gradient-to-br from-[var(--magenta)]/30 to-[var(--ember)]/20 ring-[var(--magenta)]/40",
+    electric:
+      "bg-gradient-to-br from-[var(--electric)]/30 to-[var(--violet)]/20 ring-[var(--electric)]/40",
+    violet:
+      "bg-gradient-to-br from-[var(--violet)]/30 to-[var(--magenta)]/20 ring-[var(--violet)]/40",
+    magenta:
+      "bg-gradient-to-br from-[var(--magenta)]/30 to-[var(--ember)]/20 ring-[var(--magenta)]/40",
     ember: "bg-gradient-to-br from-[var(--ember)]/30 to-[var(--magenta)]/20 ring-[var(--ember)]/40",
     lime: "bg-gradient-to-br from-[var(--lime)]/30 to-[var(--electric)]/20 ring-[var(--lime)]/40",
-    rainbow: "bg-gradient-to-br from-[var(--electric)]/30 via-[var(--magenta)]/25 to-[var(--ember)]/30 ring-[var(--magenta)]/40",
+    rainbow:
+      "bg-gradient-to-br from-[var(--electric)]/30 via-[var(--magenta)]/25 to-[var(--ember)]/30 ring-[var(--magenta)]/40",
   };
   return (
     <span
