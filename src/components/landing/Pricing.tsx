@@ -12,6 +12,7 @@ type Plan = {
   features: string[];
   cta: string;
   featured?: boolean;
+  tone: "cyan" | "magenta" | "ember";
   href?: string;
 };
 
@@ -119,6 +120,7 @@ export function Pricing() {
       unit: L.perOnce,
       features: L.bump_feats,
       cta: L.bump_cta,
+      tone: "cyan",
       href: "#oferta",
     },
     {
@@ -132,6 +134,7 @@ export function Pricing() {
       features: L.core_feats,
       cta: L.core_cta,
       featured: true,
+      tone: "magenta",
       href: "#oferta",
     },
     {
@@ -143,6 +146,7 @@ export function Pricing() {
       unit: L.perOnce,
       features: L.up_feats,
       cta: L.up_cta,
+      tone: "ember",
       href: "#oferta",
     },
   ];
@@ -164,10 +168,10 @@ export function Pricing() {
       <div className="mt-14 grid lg:grid-cols-3 gap-6 items-stretch max-w-6xl mx-auto">
         {plans.map((p, i) => (
           <FadeIn key={p.title} delay={i * 0.08}>
-            <div className={`price-card h-full flex flex-col ${p.featured ? "price-card-featured" : ""}`}>
+            <div className={`price-card price-card-${p.tone} h-full flex flex-col ${p.featured ? "price-card-featured" : ""}`}>
               {p.featured && <div className="price-badge-popular">{p.tag}</div>}
 
-              <div className="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-electric/25 via-magenta/20 to-ember/25 text-4xl ring-1 ring-border emoji-3d">
+              <div className={`price-icon price-icon-${p.tone}`}>
                 {p.icon}
               </div>
               {!p.featured && <div className="mb-3 text-sm font-black uppercase text-gradient">{p.tag}</div>}
