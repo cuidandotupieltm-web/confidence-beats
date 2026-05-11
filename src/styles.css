@@ -42,29 +42,29 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
-/* DARK (default) — Neon Electric */
+/* DARK (default) — Deep Navy / Violet (SaaS Dashboard look) */
 :root,
 :root.dark,
 .dark {
   --radius: 0.875rem;
 
-  --background: oklch(0.17 0.06 270);
-  --foreground: oklch(0.96 0.05 230);
+  --background: oklch(0.13 0.035 275);
+  --foreground: oklch(0.98 0.005 270);
 
-  --card: oklch(0.20 0.05 285);
-  --card-foreground: oklch(0.94 0.06 235);
+  --card: oklch(0.17 0.04 275);
+  --card-foreground: oklch(0.98 0.005 270);
 
-  --popover: oklch(0.20 0.05 285);
-  --popover-foreground: oklch(0.94 0.06 235);
+  --popover: oklch(0.17 0.04 275);
+  --popover-foreground: oklch(0.98 0.005 270);
 
-  --primary: oklch(0.68 0.24 268);
-  --primary-foreground: oklch(0.12 0.02 270);
+  --primary: oklch(0.62 0.25 290);
+  --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.28 0.06 285);
-  --secondary-foreground: oklch(0.97 0.04 235);
+  --secondary: oklch(0.22 0.04 280);
+  --secondary-foreground: oklch(0.98 0.005 270);
 
-  --muted: oklch(0.26 0.04 285);
-  --muted-foreground: oklch(0.82 0.08 230);
+  --muted: oklch(0.22 0.03 280);
+  --muted-foreground: oklch(0.75 0.02 270);
 
   --accent: oklch(0.65 0.28 320);
   --accent-foreground: oklch(0.97 0.02 280);
