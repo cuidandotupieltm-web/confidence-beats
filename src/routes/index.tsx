@@ -9,6 +9,7 @@ import { WrittenTestimonials } from "@/components/landing/WrittenTestimonials";
 import { TeacherStory } from "@/components/landing/TeacherStory";
 import { Modules } from "@/components/landing/Modules";
 import { Offer } from "@/components/landing/Offer";
+import { Pricing } from "@/components/landing/Pricing";
 import { Guarantee } from "@/components/landing/Guarantee";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -46,6 +47,7 @@ function Index() {
       <WrittenTestimonials />
       <TeacherStory />
       <Modules />
+      <Pricing />
       <Offer />
       <Guarantee />
       <FAQ />
