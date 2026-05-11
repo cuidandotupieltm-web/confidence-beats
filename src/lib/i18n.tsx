@@ -14,10 +14,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = (typeof window !== "undefined" && localStorage.getItem("lang")) as Lang | null;
-    if (saved && ["es", "en", "pt", "fr"].includes(saved)) setLangState(saved);
-    else if (typeof navigator !== "undefined") {
-      const n = navigator.language.slice(0, 2).toLowerCase();
-      if (["es", "en", "pt", "fr"].includes(n)) setLangState(n as Lang);
+    if (saved && ["es", "en", "fr"].includes(saved)) {
+      setLangState(saved);
+    } else if (typeof window !== "undefined") {
+      localStorage.setItem("lang", "es");
     }
   }, []);
 
@@ -44,28 +44,34 @@ type Theme = "dark" | "light";
 type ThemeCtx = { theme: Theme; toggle: () => void };
 const ThemeContext = createContext<ThemeCtx | null>(null);
 
+function applyTheme(theme: Theme) {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  root.classList.remove("dark", "light");
+  root.classList.add(theme);
+  root.setAttribute("data-theme", theme);
+  if (typeof window !== "undefined") localStorage.setItem("theme", theme);
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
     const root = document.documentElement;
-    const currentTheme = root.classList.contains("light") ? "light" : "dark";
+    const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
+    const currentTheme: Theme = saved === "light" || root.classList.contains("light") ? "light" : "dark";
+    applyTheme(currentTheme);
     setTheme(currentTheme);
-    setMounted(true);
   }, []);
 
-  useEffect(() => {
-    if (!mounted || typeof document === "undefined") return;
-    const root = document.documentElement;
-    root.classList.remove("dark", "light");
-    root.classList.add(theme);
-    root.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme, mounted]);
-
-  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
+  const toggle = () => {
+    setTheme((current) => {
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+      return next;
+    });
+  };
 
   return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
 }
