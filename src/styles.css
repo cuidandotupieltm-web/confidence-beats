@@ -350,73 +350,20 @@
     letter-spacing: -0.03em;
   }
 
-  /* Theme switch (sun/moon track) — modern */
-  .theme-switch {
-    position: relative;
-    width: 64px; height: 32px;
-    border-radius: 9999px;
-    background: linear-gradient(90deg, #1B2746, #3A1B5C);
-    border: 1px solid rgba(255,255,255,0.18);
-    cursor: pointer;
-    box-shadow: 0 6px 20px -6px rgba(122,60,255,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
-    transition: background .35s ease, box-shadow .35s ease;
-    overflow: hidden;
-  }
-  .theme-switch[data-theme="light"] {
-    background: linear-gradient(90deg, #FFD66B, #FF7A1A);
-    box-shadow: 0 6px 20px -6px rgba(255,122,26,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
-  }
-  .theme-switch .track-icon {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    font-size: 13px; line-height: 1; pointer-events: none;
-    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
-  }
-  .theme-switch .track-sun  { left: 8px;  opacity: 0; transition: opacity .3s; }
-  .theme-switch .track-moon { right: 8px; opacity: 1; transition: opacity .3s; }
-  .theme-switch[data-theme="light"] .track-sun  { opacity: 1; }
-  .theme-switch[data-theme="light"] .track-moon { opacity: 0; }
-  .theme-switch .knob {
-    position: absolute; top: 3px; left: 3px;
-    width: 26px; height: 26px; border-radius: 9999px;
-    background: linear-gradient(135deg, #ffffff, #E6EAFF);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08) inset;
-    transition: transform .4s cubic-bezier(.4,1.6,.6,1), background .35s ease;
-  }
-  .theme-switch[data-theme="light"] .knob {
-    transform: translateX(32px);
-    background: linear-gradient(135deg, #FFF6E0, #FFD66B);
-  }
-
-  /* Language pill */
-  .lang-pill {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.45rem 0.85rem;
-    border-radius: 9999px;
-    font-size: 0.8rem;
-    color: var(--foreground);
-    background: linear-gradient(135deg, color-mix(in oklab, var(--electric) 22%, transparent), color-mix(in oklab, var(--magenta) 22%, transparent));
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 4px 18px -6px color-mix(in oklab, var(--violet) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.08);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .lang-pill:hover {
-    transform: translateY(-1px) scale(1.03);
-    box-shadow: 0 8px 24px -6px color-mix(in oklab, var(--magenta) 65%, transparent);
-  }
-
   /* Language SEGMENTED control (ES | EN | FR) — SaaS look */
   .lang-segmented {
     display: inline-flex;
-    padding: 4px;
+    padding: 5px;
     border-radius: 9999px;
-    background: color-mix(in oklab, var(--foreground) 8%, transparent);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--foreground) 11%, transparent), color-mix(in oklab, var(--foreground) 5%, transparent));
     border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 0 color-mix(in oklab, var(--primary-foreground) 12%, transparent);
   }
   .lang-segmented-btn {
     appearance: none; border: 0; background: transparent;
-    padding: 6px 14px;
-    font-size: 12.5px; font-weight: 700;
-    letter-spacing: 0.02em;
+    padding: 0.56rem 1rem;
+    font-size: 0.86rem; font-weight: 800;
+    letter-spacing: 0;
     color: var(--muted-foreground);
     border-radius: 9999px;
     cursor: pointer;
@@ -424,19 +371,19 @@
   }
   .lang-segmented-btn:hover { color: var(--foreground); }
   .lang-segmented-btn.is-active {
-    color: #fff;
-    background: linear-gradient(135deg, #7C3AED, #B14BFF);
-    box-shadow: 0 6px 18px -6px rgba(124,58,237,0.6), 0 0 0 1px rgba(255,255,255,0.12) inset;
+    color: var(--primary-foreground);
+    background: linear-gradient(135deg, var(--violet), var(--magenta));
+    box-shadow: 0 8px 22px -7px color-mix(in oklab, var(--violet) 70%, transparent), 0 0 0 1px color-mix(in oklab, var(--primary-foreground) 16%, transparent) inset;
   }
 
   /* Theme icon button — modern simple */
   .theme-icon-btn {
-    width: 36px; height: 36px;
+    width: 44px; height: 44px;
     display: inline-grid; place-items: center;
     border-radius: 9999px;
-    background: color-mix(in oklab, var(--foreground) 6%, transparent);
+    background: linear-gradient(135deg, color-mix(in oklab, var(--violet) 22%, transparent), color-mix(in oklab, var(--magenta) 18%, transparent));
     border: 1px solid var(--glass-border);
-    color: var(--foreground);
+    color: var(--primary-foreground);
     cursor: pointer;
     transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
@@ -454,6 +401,7 @@
   }
   .theme-icon-btn .theme-sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
   .theme-icon-btn .theme-moon-icon { opacity: 0; transform: scale(.75) rotate(-20deg); }
+  .light .theme-icon-btn { background: linear-gradient(135deg, var(--gold), var(--ember)); }
   .light .theme-icon-btn .theme-sun-icon { opacity: 0; transform: scale(.75) rotate(20deg); }
   .light .theme-icon-btn .theme-moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
 
