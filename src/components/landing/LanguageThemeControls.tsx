@@ -1,75 +1,50 @@
 import { useTheme, useT } from "@/lib/i18n";
 import type { Lang } from "@/lib/translations";
-import { useState, useRef, useEffect } from "react";
 
-const LANGS: { code: Lang; flag: string; label: string; name: string }[] = [
-  { code: "es", flag: "🇪🇸", label: "ES", name: "Español" },
-  { code: "en", flag: "🇺🇸", label: "EN", name: "English" },
-  { code: "pt", flag: "🇧🇷", label: "PT", name: "Português" },
-  { code: "fr", flag: "🇫🇷", label: "FR", name: "Français" },
+const LANGS: { code: Lang; label: string }[] = [
+  { code: "es", label: "ES" },
+  { code: "en", label: "EN" },
+  { code: "fr", label: "FR" },
 ];
 
 export function LanguageThemeControls() {
   const { lang, setLang } = useT();
   const { theme, toggle } = useTheme();
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  const current = LANGS.find((l) => l.code === lang) ?? LANGS[0];
-
-  useEffect(() => {
-    const onDoc = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", onDoc);
-    return () => document.removeEventListener("mousedown", onDoc);
-  }, []);
 
   return (
-    <div className="flex items-center gap-2">
-      <div className="relative" ref={ref}>
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="lang-pill"
-          aria-label="Change language"
-        >
-          <span className="text-lg leading-none emoji-3d">{current.flag}</span>
-          <span className="font-bold">{current.label}</span>
-          <svg width="10" height="10" viewBox="0 0 10 10" className={`transition-transform ${open ? "rotate-180" : ""}`}>
-            <path d="M1 3l4 4 4-4" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-        {open && (
-          <div className="absolute right-0 mt-2 w-44 rounded-2xl glass-strong p-1.5 z-50 shadow-2xl">
-            {LANGS.map((l) => (
-              <button
-                key={l.code}
-                onClick={() => {
-                  setLang(l.code);
-                  setOpen(false);
-                }}
-                className={`w-full flex items-center gap-2.5 rounded-xl px-3 py-2 text-sm transition hover:bg-[var(--violet)]/20 ${
-                  lang === l.code ? "bg-gradient-to-r from-[var(--electric)]/20 to-[var(--magenta)]/20" : ""
-                }`}
-              >
-                <span className="text-lg emoji-3d">{l.flag}</span>
-                <span className={lang === l.code ? "text-gradient font-bold" : "font-medium"}>{l.name}</span>
-                {lang === l.code && <span className="ml-auto emoji-3d">✨</span>}
-              </button>
-            ))}
-          </div>
-        )}
+    <div className="flex items-center gap-3">
+      <div className="lang-segmented" role="tablist" aria-label="Language">
+        {LANGS.map((l) => (
+          <button
+            key={l.code}
+            role="tab"
+            aria-selected={lang === l.code}
+            onClick={() => setLang(l.code)}
+            className={`lang-segmented-btn ${lang === l.code ? "is-active" : ""}`}
+          >
+            {l.label}
+          </button>
+        ))}
       </div>
 
       <button
         onClick={toggle}
-        className="theme-switch"
-        data-theme={theme}
+        className="theme-icon-btn"
         aria-label="Toggle theme"
         title={theme === "dark" ? "Light mode" : "Dark mode"}
       >
-        <span className="track-icon track-sun">☀️</span>
-        <span className="track-icon track-moon">🌙</span>
-        <span className="knob" />
+        {theme === "dark" ? (
+          /* Sun icon (click to go light) */
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+        ) : (
+          /* Moon icon (click to go dark) */
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        )}
       </button>
     </div>
   );
