@@ -411,6 +411,37 @@
     color: transparent;
     filter: drop-shadow(0 0 22px color-mix(in oklab, var(--magenta) 32%, transparent));
   }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3.15rem, 7.35vw, 7.55rem);
+    line-height: 0.98;
+    max-width: 10.6em;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .hero-title-line {
+    display: block;
+    padding-bottom: 0.06em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 20px color-mix(in oklab, var(--magenta) 26%, transparent));
+  }
+  .hero-line-electric {
+    background-image: linear-gradient(90deg, var(--cyan), var(--electric), var(--violet));
+  }
+  .hero-line-rainbow {
+    background-image: linear-gradient(90deg, var(--magenta), var(--rose), var(--ember), var(--cyan));
+  }
+  .hero-line-neon {
+    background-image: linear-gradient(90deg, var(--primary-foreground), var(--cyan), var(--violet), var(--magenta));
+  }
+  .light .hero-line-neon {
+    background-image: linear-gradient(90deg, var(--foreground), var(--electric), var(--violet), var(--magenta));
+  }
+  .hero-line-ember {
+    background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--hot-pink), var(--magenta));
+  }
   .text-gradient-rainbow {
     background: linear-gradient(
       90deg,
@@ -1020,6 +1051,34 @@
     }
     .price-card-featured:hover {
       transform: translateY(-4px);
+    }
+  }
+  @media (max-height: 700px) and (min-width: 768px) {
+    .hero-section {
+      min-height: auto;
+      padding-top: 6.25rem;
+      padding-bottom: 3rem;
+    }
+    .hero-title {
+      margin-top: 1rem;
+      font-size: clamp(3rem, 5.85vw, 4.8rem);
+      line-height: 0.96;
+    }
+    .hero-section p {
+      margin-top: 1rem;
+      max-width: 44rem;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+    .hero-actions {
+      margin-top: 1.25rem;
+    }
+    .hero-badges {
+      margin-top: 1rem;
+    }
+    .hero-visual {
+      margin-top: 1.75rem;
+      max-width: 42rem;
     }
   }
 }
