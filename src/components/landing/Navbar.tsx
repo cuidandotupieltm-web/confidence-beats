@@ -1,16 +1,10 @@
-import { motion } from "framer-motion";
 import { useT } from "@/lib/i18n";
 import { LanguageThemeControls } from "./LanguageThemeControls";
 
 export function Navbar() {
   const { t } = useT();
   return (
-    <motion.header
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 inset-x-0 z-50"
-    >
+    <header className="fixed top-0 inset-x-0 z-50">
       <div className="mx-auto max-w-7xl px-4 mt-4">
         <div className="glass rounded-2xl px-4 py-2.5 flex items-center justify-between gap-2">
           <a href="#" className="flex items-center gap-2.5 font-semibold">
@@ -40,6 +34,6 @@ export function Navbar() {
           </div>
         </div>
       </div>
-    </motion.header>
+    </header>
   );
 }
