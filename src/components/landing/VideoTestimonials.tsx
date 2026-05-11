@@ -47,7 +47,7 @@ export function VideoTestimonials() {
                 </div>
                 <div className="mt-3 flex gap-1 text-base">
                   {Array.from({ length: 5 }).map((_, idx) => (
-                    <span key={idx} className="emoji-3d">⭐</span>
+                    <span key={idx} className="star-gold star-gold-lg">★</span>
                   ))}
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground italic">"{v.quote}"</p>
