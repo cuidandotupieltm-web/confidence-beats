@@ -370,4 +370,120 @@
     transform: translateY(-1px) scale(1.03);
     box-shadow: 0 8px 24px -6px color-mix(in oklab, var(--magenta) 65%, transparent);
   }
+
+  /* Language SEGMENTED control (ES | EN | FR) — SaaS look */
+  .lang-segmented {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--foreground) 8%, transparent);
+    border: 1px solid var(--glass-border);
+  }
+  .lang-segmented-btn {
+    appearance: none; border: 0; background: transparent;
+    padding: 6px 14px;
+    font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--muted-foreground);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: color .2s ease, background .25s ease, box-shadow .25s ease, transform .15s ease;
+  }
+  .lang-segmented-btn:hover { color: var(--foreground); }
+  .lang-segmented-btn.is-active {
+    color: #fff;
+    background: linear-gradient(135deg, #7C3AED, #B14BFF);
+    box-shadow: 0 6px 18px -6px rgba(124,58,237,0.6), 0 0 0 1px rgba(255,255,255,0.12) inset;
+  }
+
+  /* Theme icon button — modern simple */
+  .theme-icon-btn {
+    width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--foreground) 6%, transparent);
+    border: 1px solid var(--glass-border);
+    color: var(--foreground);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .theme-icon-btn:hover {
+    background: color-mix(in oklab, var(--primary) 18%, transparent);
+    color: var(--primary);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px -8px color-mix(in oklab, var(--primary) 70%, transparent);
+  }
+
+  /* Pricing card — clean SaaS Dashboard style */
+  .price-card {
+    position: relative;
+    background: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.02), 0 18px 50px -30px rgba(0,0,0,0.25);
+  }
+  .price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px -25px rgba(124,58,237,0.35);
+    border-color: color-mix(in oklab, var(--primary) 35%, transparent);
+  }
+  .price-card-featured {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(135deg, #7C3AED, #B14BFF, #FF2EA8) border-box;
+    box-shadow: 0 30px 70px -25px rgba(124,58,237,0.55);
+    transform: translateY(-8px);
+  }
+  .price-card-featured:hover { transform: translateY(-12px); }
+  .price-badge-popular {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg, #7C3AED, #B14BFF);
+    color: white; font-size: 11px; font-weight: 800;
+    padding: 6px 14px; border-radius: 9999px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    box-shadow: 0 8px 24px -8px rgba(124,58,237,0.7);
+  }
+  .price-check {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border-radius: 9999px;
+    background: color-mix(in oklab, #10B981 18%, transparent);
+    color: #10B981; flex-shrink: 0;
+  }
+  .price-btn {
+    width: 100%;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.95rem 1.25rem;
+    border-radius: 0.85rem;
+    font-weight: 700; font-size: 0.95rem;
+    background: color-mix(in oklab, var(--foreground) 8%, transparent);
+    color: var(--foreground);
+    border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+    cursor: pointer;
+  }
+  .price-btn:hover { transform: translateY(-1px); background: color-mix(in oklab, var(--foreground) 14%, transparent); }
+  .price-btn-featured {
+    background: linear-gradient(135deg, #7C3AED, #B14BFF);
+    color: white; border: 0;
+    box-shadow: 0 12px 32px -10px rgba(124,58,237,0.7);
+  }
+  .price-btn-featured:hover {
+    background: linear-gradient(135deg, #8B4BFF, #C760FF);
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 18px 40px -10px rgba(177,75,255,0.8);
+  }
+
+  /* Brand logo mark */
+  .brand-logo {
+    width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #7C3AED, #B14BFF);
+    box-shadow: 0 8px 22px -6px rgba(124,58,237,0.6), inset 0 1px 0 rgba(255,255,255,0.25);
+    color: white;
+  }
 }
