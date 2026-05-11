@@ -1,15 +1,15 @@
 import { useTheme, useT } from "@/lib/i18n";
 import type { Lang } from "@/lib/translations";
 
-const LANGS: { code: Lang; label: string }[] = [
-  { code: "es", label: "ES" },
-  { code: "en", label: "EN" },
-  { code: "fr", label: "FR" },
+const LANGS: { code: Lang; label: string; flag: string }[] = [
+  { code: "es", label: "ES", flag: "🇪🇸" },
+  { code: "en", label: "EN", flag: "🇺🇸" },
+  { code: "fr", label: "FR", flag: "🇫🇷" },
 ];
 
 export function LanguageThemeControls() {
   const { lang, setLang } = useT();
-  const { toggle } = useTheme();
+  const { theme, toggle } = useTheme();
 
   return (
     <div className="flex items-center gap-3">
@@ -22,16 +22,18 @@ export function LanguageThemeControls() {
             onClick={() => setLang(l.code)}
             className={`lang-segmented-btn ${lang === l.code ? "is-active" : ""}`}
           >
-            {l.label}
+            <span aria-hidden="true">{l.flag}</span>
+            <span>{l.label}</span>
           </button>
         ))}
       </div>
 
       <button
         onClick={toggle}
+        data-theme={theme}
         className="theme-icon-btn"
-        aria-label="Toggle theme"
-        title="Toggle theme"
+        aria-label={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+        title={theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       >
         <span className="sr-only">Toggle theme</span>
         <span className="theme-sun-icon" aria-hidden="true">
