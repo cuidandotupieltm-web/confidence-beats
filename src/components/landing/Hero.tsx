@@ -22,7 +22,8 @@ export function Hero() {
         </div>
 
         <h1 className="mt-7 text-[clamp(3.55rem,8.1vw,7.8rem)] font-black leading-[1.02] tracking-normal text-balance">
-          {t("hero_title_1")} <span className="text-shimmer">{t("hero_title_2")}</span>
+          <span className="text-punch">{t("hero_title_1")}</span>{" "}
+          <span className="text-shimmer">{t("hero_title_2")}</span>
           <br className="hidden sm:block" />
           {t("hero_title_3")} <span className="text-gradient-ember">{t("hero_title_4")}</span>
         </h1>
