@@ -413,6 +413,16 @@
     transform: translateY(-1px);
     box-shadow: 0 6px 18px -8px color-mix(in oklab, var(--primary) 70%, transparent);
   }
+  .theme-icon-btn .theme-sun-icon,
+  .theme-icon-btn .theme-moon-icon {
+    grid-area: 1 / 1;
+    display: inline-flex;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .theme-icon-btn .theme-sun-icon { opacity: 1; transform: scale(1) rotate(0deg); }
+  .theme-icon-btn .theme-moon-icon { opacity: 0; transform: scale(.75) rotate(-20deg); }
+  .light .theme-icon-btn .theme-sun-icon { opacity: 0; transform: scale(.75) rotate(20deg); }
+  .light .theme-icon-btn .theme-moon-icon { opacity: 1; transform: scale(1) rotate(0deg); }
 
   /* Pricing card — clean SaaS Dashboard style */
   .price-card {
