@@ -13,6 +13,7 @@ import { Guarantee } from "@/components/landing/Guarantee";
 import { FAQ } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { Footer } from "@/components/landing/Footer";
+import { StickyBuyBar } from "@/components/landing/StickyBuyBar";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -50,6 +51,7 @@ function Index() {
       <FAQ />
       <FinalCTA />
       <Footer />
+      <StickyBuyBar />
     </main>
   );
 }

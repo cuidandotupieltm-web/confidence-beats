@@ -85,7 +85,8 @@ export function Hero() {
             <img src={hero} alt="Drummer" width={1920} height={1080} className="w-full h-auto object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full glass-strong px-3 py-1.5 text-xs font-bold">
-              <span className="emoji-3d">⭐</span> 4.9/5
+              <span className="star-gold">★</span><span className="star-gold">★</span><span className="star-gold">★</span><span className="star-gold">★</span><span className="star-gold">★</span>
+              <span className="ml-1">4.9/5</span>
             </div>
           </div>
           <motion.div

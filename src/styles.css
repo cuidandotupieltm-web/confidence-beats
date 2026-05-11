@@ -48,22 +48,22 @@
   --radius: 0.875rem;
 
   --background: oklch(0.14 0.04 285);
-  --foreground: oklch(0.97 0.02 280);
+  --foreground: oklch(0.94 0.06 235);
 
   --card: oklch(0.20 0.05 285);
-  --card-foreground: oklch(0.97 0.02 280);
+  --card-foreground: oklch(0.94 0.06 235);
 
   --popover: oklch(0.20 0.05 285);
-  --popover-foreground: oklch(0.97 0.02 280);
+  --popover-foreground: oklch(0.94 0.06 235);
 
   --primary: oklch(0.68 0.24 268);
   --primary-foreground: oklch(0.12 0.02 270);
 
   --secondary: oklch(0.28 0.06 285);
-  --secondary-foreground: oklch(0.97 0.02 280);
+  --secondary-foreground: oklch(0.97 0.04 235);
 
   --muted: oklch(0.26 0.04 285);
-  --muted-foreground: oklch(0.78 0.05 290);
+  --muted-foreground: oklch(0.82 0.08 230);
 
   --accent: oklch(0.65 0.28 320);
   --accent-foreground: oklch(0.97 0.02 280);
@@ -262,4 +262,77 @@
     50% { transform: translateY(-6px); }
   }
   .animate-float { animation: float-y 4s ease-in-out infinite; }
+
+  /* Golden star */
+  .star-gold {
+    color: #FFD24A;
+    text-shadow:
+      0 0 8px rgba(255,210,74,0.7),
+      0 0 18px rgba(255,160,0,0.5);
+    font-size: 1.25rem;
+    line-height: 1;
+    display: inline-block;
+  }
+  .star-gold-lg { font-size: 1.75rem; }
+
+  /* Mega buy button */
+  .btn-mega {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.1rem 2rem;
+    border-radius: 9999px;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: white;
+    background: linear-gradient(90deg, #00C8FF, #7A3CFF, #FF2EA8, #FF7A1A);
+    background-size: 220% 100%;
+    box-shadow:
+      0 14px 50px -10px rgba(122,60,255,0.75),
+      0 8px 30px -10px rgba(255,46,168,0.6),
+      0 0 0 1px rgba(255,255,255,0.15) inset;
+    animation: shimmer 5s linear infinite, pulse-glow 2.6s ease-in-out infinite;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-mega:hover { transform: translateY(-2px) scale(1.02); }
+  .btn-mega::after {
+    content: "";
+    position: absolute; inset: -2px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #00C8FF, #FF2EA8, #FF7A1A);
+    filter: blur(18px); opacity: .55; z-index: -1;
+  }
+
+  /* Neon price */
+  .price-neon {
+    font-family: var(--font-display);
+    font-weight: 900;
+    background: linear-gradient(90deg, #00E5FF, #B14BFF, #FF2EA8);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 0 30px rgba(177,75,255,0.35);
+    letter-spacing: -0.03em;
+  }
+
+  /* Theme switch (sun/moon track) */
+  .theme-switch {
+    position: relative;
+    width: 58px; height: 30px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, color-mix(in oklab, var(--electric) 35%, transparent), color-mix(in oklab, var(--magenta) 35%, transparent));
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: background .3s ease;
+  }
+  .theme-switch .knob {
+    position: absolute; top: 3px; left: 3px;
+    width: 24px; height: 24px; border-radius: 9999px;
+    background: white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.08) inset;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; line-height: 1;
+    transition: transform .35s cubic-bezier(.4,1.6,.6,1);
+  }
+  .theme-switch[data-theme="light"] .knob { transform: translateX(28px); }
 }

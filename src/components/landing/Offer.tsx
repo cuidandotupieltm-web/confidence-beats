@@ -40,15 +40,21 @@ export function Offer() {
                 ))}
               </ul>
 
-              <div className="mt-8 flex flex-wrap items-end gap-4">
+              <div className="mt-8 flex flex-wrap items-end gap-6">
                 <div>
                   <div className="text-sm text-muted-foreground line-through">{t("offer_value")}</div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-5xl md:text-6xl font-bold text-shimmer">$37</span>
+                    <span className="price-neon text-6xl md:text-7xl">$37</span>
                     <span className="text-muted-foreground">{t("offer_unit")}</span>
                   </div>
                 </div>
+              </div>
+              <div className="mt-6">
                 <CTAButton>{t("offer_cta")}</CTAButton>
+                <div className="mt-3 flex items-center gap-1 text-xs text-muted-foreground">
+                  <span className="star-gold">★</span><span className="star-gold">★</span><span className="star-gold">★</span><span className="star-gold">★</span><span className="star-gold">★</span>
+                  <span className="ml-2 font-semibold text-foreground">4.9/5 · +2.000 estudiantes</span>
+                </div>
               </div>
             </div>
           </div>

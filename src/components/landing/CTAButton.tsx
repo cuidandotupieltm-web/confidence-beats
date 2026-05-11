@@ -7,19 +7,18 @@ interface CTAButtonProps {
   href?: string;
 }
 
-export function CTAButton({ children, variant = "primary", size = "lg", href = "#oferta" }: CTAButtonProps) {
-  const sizeClasses = size === "lg" ? "px-8 py-4 text-base md:text-lg" : "px-6 py-3 text-sm md:text-base";
-  const variantClass = variant === "ember" ? "btn-ember" : "btn-glow";
+export function CTAButton({ children, size = "lg", href = "#oferta" }: CTAButtonProps) {
+  const sizeClasses = size === "lg" ? "px-8 py-5 text-base md:text-lg" : "px-6 py-3 text-sm md:text-base";
   return (
     <motion.a
       href={href}
-      whileHover={{ scale: 1.03 }}
+      whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.97 }}
-      className={`inline-flex items-center gap-2 rounded-full ${sizeClasses} ${variantClass} font-bold text-white shadow-2xl`}
+      className={`btn-mega ${sizeClasses}`}
     >
-      <span className="emoji-3d">🚀</span>
-      {children}
-      <span className="emoji-3d">→</span>
+      <span className="emoji-3d text-xl">🛒</span>
+      <span>{children}</span>
+      <span className="emoji-3d text-xl">→</span>
     </motion.a>
   );
 }
