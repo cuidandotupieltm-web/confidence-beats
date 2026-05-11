@@ -11,17 +11,17 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-aurora pt-28 pb-20 md:pt-36 md:pb-28 px-6">
+    <section className="relative overflow-hidden bg-aurora pt-28 pb-20 md:pt-36 md:pb-28 px-6 min-h-[92vh]">
       <div className="absolute inset-0 grid-bg opacity-25 pointer-events-none" />
       <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[920px] rounded-full bg-[var(--magenta)]/25 blur-3xl pointer-events-none animate-pulse-glow" />
 
-      <div className="relative mx-auto max-w-5xl text-center flex flex-col items-center">
+      <div className="relative mx-auto max-w-6xl text-center flex flex-col items-center">
         <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-xs md:text-sm font-semibold">
           <span className="emoji-3d animate-float">🔥</span>
           <span className="text-gradient font-bold">{t("hero_badge")}</span>
         </div>
 
-        <h1 className="mt-7 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tight">
+        <h1 className="mt-7 text-[clamp(3.8rem,10vw,8.8rem)] font-black leading-[1.02] tracking-normal text-balance">
           {t("hero_title_1")}{" "}
           <span className="text-shimmer">{t("hero_title_2")}</span>
           <br className="hidden sm:block" />
@@ -29,7 +29,7 @@ export function Hero() {
           <span className="text-gradient-ember">{t("hero_title_4")}</span>
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
+        <p className="mt-6 max-w-3xl text-xl md:text-2xl leading-relaxed text-muted-foreground">
           {t("hero_subtitle")}
         </p>
 
@@ -53,8 +53,8 @@ export function Hero() {
           ))}
         </div>
 
-        <div className="relative mt-14 w-full max-w-4xl">
-          <div className="relative rounded-3xl overflow-hidden ring-stage">
+        <div className="relative mt-14 w-full max-w-5xl">
+          <div className="relative rounded-[2rem] overflow-hidden ring-stage">
             <img
               src={hero}
               alt="Drummer"
