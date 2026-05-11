@@ -152,16 +152,30 @@
     scroll-behavior: smooth;
   }
   body {
-    background: var(--color-background);
+    background: var(--background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
   }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(58rem 36rem at 50% -6rem, color-mix(in oklab, var(--magenta) 44%, transparent), transparent 68%),
+      radial-gradient(40rem 32rem at 8% 10%, color-mix(in oklab, var(--electric) 30%, transparent), transparent 72%),
+      linear-gradient(180deg, color-mix(in oklab, var(--violet) 18%, var(--background)), var(--background) 46%);
+  }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+  }
+  p, li, a, button {
+    font-size-adjust: 0.52;
   }
 }
 
