@@ -594,4 +594,17 @@
     line-height: 1.05;
     font-weight: 900;
   }
+  main section p {
+    text-align: center;
+  }
+  main section h3,
+  main section h4 {
+    font-weight: 850;
+  }
+  @media (max-width: 640px) {
+    .lang-segmented-btn { padding: 0.52rem 0.72rem; }
+    .btn-mega { width: 100%; max-width: 22rem; }
+    .price-card-featured { transform: none; }
+    .price-card-featured:hover { transform: translateY(-4px); }
+  }
 }
