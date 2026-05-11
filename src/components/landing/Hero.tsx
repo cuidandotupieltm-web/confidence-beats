@@ -41,12 +41,7 @@ export function Hero() {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.45 }}
-          className="mt-8 flex flex-wrap gap-3 justify-center"
-        >
+        <div className="mt-8 flex flex-wrap gap-3 justify-center">
           {badges.map(({ emoji, label }) => (
             <div
               key={label}
@@ -56,14 +51,9 @@ export function Hero() {
               {label}
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mt-14 w-full max-w-4xl"
-        >
+        <div className="relative mt-14 w-full max-w-4xl">
           <div className="relative rounded-3xl overflow-hidden ring-stage">
             <img
               src={hero}
@@ -82,7 +72,7 @@ export function Hero() {
               <span className="ml-1">4.9/5</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
