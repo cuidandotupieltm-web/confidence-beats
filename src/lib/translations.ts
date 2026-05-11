@@ -10,10 +10,10 @@ const dict = {
     nav_cta: "Empezar $37",
     // hero
     hero_badge: "Obtén Batería Desde Cero con Confianza por SOLO $37",
-    hero_title_1: "Aprende a tocar batería",
-    hero_title_2: "desde cero",
-    hero_title_3: "y gana confianza en solo",
-    hero_title_4: "2 semanas",
+    hero_title_1: "Aprende a tocar",
+    hero_title_2: "batería desde cero",
+    hero_title_3: "y gana confianza en",
+    hero_title_4: "solo 2 semanas",
     hero_subtitle: "Descubre que sí puedes aprender algo nuevo, expresarte con la música y sentirte seguro contigo mismo desde el primer día — usando El Sistema Práctica Inteligente.",
     hero_cta: "Obtén acceso instantáneo por solo $37",
     hero_guarantee: "Garantía 30 días · Acceso de por vida",
@@ -180,7 +180,7 @@ const dict = {
   en: {
     nav_method: "Method", nav_course: "Course", nav_testimonials: "Testimonials", nav_faq: "FAQ", nav_cta: "Start $37",
     hero_badge: "Get Drums From Zero With Confidence for ONLY $37",
-    hero_title_1: "Learn to play drums", hero_title_2: "from scratch", hero_title_3: "and gain confidence in just", hero_title_4: "2 weeks",
+    hero_title_1: "Learn to play", hero_title_2: "drums from scratch", hero_title_3: "and gain confidence", hero_title_4: "in just 2 weeks",
     hero_subtitle: "Discover that you CAN learn something new, express yourself through music, and feel confident from day one — using The Smart Practice System.",
     hero_cta: "Get instant access for only $37",
     hero_guarantee: "30-day guarantee · Lifetime access",
@@ -267,7 +267,7 @@ const dict = {
   pt: {
     nav_method: "Método", nav_course: "Curso", nav_testimonials: "Depoimentos", nav_faq: "FAQ", nav_cta: "Começar $37",
     hero_badge: "Obtenha Bateria Do Zero Com Confiança por APENAS $37",
-    hero_title_1: "Aprenda a tocar bateria", hero_title_2: "do zero", hero_title_3: "e ganhe confiança em apenas", hero_title_4: "2 semanas",
+    hero_title_1: "Aprenda a tocar", hero_title_2: "bateria do zero", hero_title_3: "e ganhe confiança", hero_title_4: "em apenas 2 semanas",
     hero_subtitle: "Descubra que você PODE aprender algo novo, se expressar com a música e se sentir seguro desde o primeiro dia — usando O Sistema Prática Inteligente.",
     hero_cta: "Acesso instantâneo por apenas $37", hero_guarantee: "Garantia 30 dias · Acesso vitalício",
     badge_beginners: "Iniciantes", badge_weeks: "2 semanas", badge_no_theory: "Sem teoria complicada",
@@ -353,7 +353,7 @@ const dict = {
   fr: {
     nav_method: "Méthode", nav_course: "Cours", nav_testimonials: "Témoignages", nav_faq: "FAQ", nav_cta: "Démarrer $37",
     hero_badge: "Obtenez Batterie Depuis Zéro Avec Confiance pour SEULEMENT $37",
-    hero_title_1: "Apprenez la batterie", hero_title_2: "depuis zéro", hero_title_3: "et gagnez en confiance en seulement", hero_title_4: "2 semaines",
+    hero_title_1: "Apprenez la batterie", hero_title_2: "depuis zéro", hero_title_3: "et gagnez confiance", hero_title_4: "en seulement 2 semaines",
     hero_subtitle: "Découvrez que vous POUVEZ apprendre quelque chose de nouveau, vous exprimer en musique et vous sentir sûr de vous dès le premier jour — grâce au Système Pratique Intelligente.",
     hero_cta: "Accès instantané pour seulement $37", hero_guarantee: "Garantie 30 jours · Accès à vie",
     badge_beginners: "Débutants", badge_weeks: "2 semaines", badge_no_theory: "Sans théorie compliquée",
