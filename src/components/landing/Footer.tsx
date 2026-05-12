@@ -5,16 +5,14 @@ export function Footer() {
   const { t } = useT();
   return (
     <footer className="border-t border-white/10 py-10 px-6 text-sm text-muted-foreground">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-        <div className="flex-1">
-          <div className="font-bold text-gradient text-base inline-flex items-center gap-2">
-            <span className="emoji-3d">🥁</span> Batería Desde Cero con Confianza
-          </div>
-          <div className="mt-2">
-            © {new Date().getFullYear()} Daniel Estrada · {t("footer_rights")}
-          </div>
+      <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 text-center">
+        <div className="font-bold text-gradient text-base inline-flex items-center gap-2">
+          <span className="emoji-3d">🥁</span> Batería Desde Cero con Confianza
         </div>
-        <div className="flex items-center gap-3 md:self-end">
+        <div>
+          © {new Date().getFullYear()} Daniel Estrada · {t("footer_rights")}
+        </div>
+        <div className="flex items-center justify-center gap-3">
           <a
             href="https://facebook.com"
             target="_blank"
