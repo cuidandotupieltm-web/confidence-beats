@@ -8,9 +8,9 @@ import { useT } from "@/lib/i18n";
 export function VideoTestimonials() {
   const { t } = useT();
   const videos = [
-    { thumb: p1, src: "/videos/testimonial-1.mp4", name: "Carlos M.", result: t("vt_1_result"), quote: t("vt_1_quote") },
-    { thumb: p2, src: "/videos/testimonial-2.mp4", name: "Lucía R.", result: t("vt_2_result"), quote: t("vt_2_quote") },
-    { thumb: p3, src: "/videos/testimonial-3.mp4", name: "Andrés P.", result: t("vt_3_result"), quote: t("vt_3_quote") },
+    { thumb: p1, src: "/videos/testimonial-1.mp4", name: "Mauricio", result: t("vt_1_result"), quote: t("vt_1_quote") },
+    { thumb: p2, src: "/videos/testimonial-2.mp4", name: "Emilio R.", result: t("vt_2_result"), quote: t("vt_2_quote") },
+    { thumb: p3, src: "/videos/testimonial-3.mp4", name: "Jonathan F.", result: t("vt_3_result"), quote: t("vt_3_quote") },
   ];
 
   return (
