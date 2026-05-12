@@ -14,5 +14,9 @@ export default defineConfig({
   plugins: [netlify()],
   tanstackStart: {
     server: { entry: "server" },
+    spa: {
+      enabled: true,
+      maskPath: "/",
+    },
   },
 });
