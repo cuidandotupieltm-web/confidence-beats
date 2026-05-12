@@ -14,5 +14,16 @@ export default defineConfig({
   plugins: [netlify()],
   tanstackStart: {
     server: { entry: "server" },
+    pages: [
+      {
+        path: "/",
+        prerender: {
+          enabled: true,
+        },
+      },
+    ],
+    prerender: {
+      enabled: true,
+    },
   },
 });
