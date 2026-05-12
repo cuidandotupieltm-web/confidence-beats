@@ -14,7 +14,7 @@ export function Footer() {
         </div>
         <div className="flex items-center justify-center gap-3">
           <a
-            href="https://facebook.com"
+            href="https://www.facebook.com/share/p/1bfa9VSccv/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -24,7 +24,7 @@ export function Footer() {
             <Facebook size={18} fill="currentColor" strokeWidth={0} />
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/creatoremmusic?utm_source=qr&igsh=MWo2cmRyZ2UxbGZ4OA"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
