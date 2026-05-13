@@ -1284,3 +1284,14 @@
     color: oklch(0.12 0.01 260) !important;
   }
 }
+
+/* "Curso principal" badge — black text in both modes */
+.chip-magenta {
+  color: oklch(0.12 0.01 260) !important;
+  -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
+}
+:is(:root, .dark) #oferta .chip-magenta,
+:is(:root, .dark) .chip-magenta {
+  color: oklch(0.12 0.01 260) !important;
+  -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
+}
