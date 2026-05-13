@@ -465,6 +465,37 @@
     color: oklch(0.12 0.01 260) !important;
     filter: none !important;
   }
+  /* Dark theme: mirror the light readability rules but swap black for white */
+  .dark .hero-title-line {
+    filter: none;
+  }
+  .dark .hero-line-electric,
+  .dark .hero-line-neon {
+    background-image: none;
+    -webkit-text-fill-color: oklch(0.985 0.003 250);
+    color: oklch(0.985 0.003 250);
+  }
+  .dark .hero-line-rainbow,
+  .dark .hero-line-ember {
+    background-image: none;
+    -webkit-text-fill-color: oklch(0.88 0.17 92);
+    color: oklch(0.88 0.17 92);
+  }
+  .dark .text-gradient,
+  .dark .text-shimmer,
+  .dark .text-punch {
+    background-image: none !important;
+    -webkit-text-fill-color: oklch(0.985 0.003 250);
+    color: oklch(0.985 0.003 250) !important;
+    filter: none !important;
+  }
+  .dark .text-gradient-ember,
+  .dark .text-gradient-rainbow {
+    background-image: none !important;
+    -webkit-text-fill-color: oklch(0.88 0.17 92);
+    color: oklch(0.88 0.17 92) !important;
+    filter: none !important;
+  }
   .hero-line-ember {
     background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--hot-pink), var(--magenta));
   }
