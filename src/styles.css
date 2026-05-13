@@ -1219,7 +1219,11 @@
     background-clip: initial !important;
     -webkit-text-fill-color: oklch(0.68 0.19 150) !important;
     color: oklch(0.68 0.19 150) !important;
-    text-shadow: 0 0 24px color-mix(in oklab, oklch(0.68 0.19 150) 35%, transparent) !important;
+    -webkit-text-stroke: 2px #ffffff !important;
+    paint-order: stroke fill !important;
+    text-shadow:
+      0 0 18px color-mix(in oklab, oklch(0.68 0.19 150) 70%, transparent),
+      0 0 32px color-mix(in oklab, oklch(0.78 0.22 145) 50%, transparent) !important;
   }
 
   /* === Buy buttons: yellow → luminous green, black text & icons (both modes) === */
