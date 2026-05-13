@@ -267,7 +267,7 @@ const dict = {
   pt: {
     nav_method: "Método", nav_course: "Curso", nav_testimonials: "Depoimentos", nav_faq: "FAQ", nav_cta: "Começar $37",
     hero_badge: "Obtenha Bateria Do Zero Com Confiança por APENAS $37",
-    hero_title_1: "Aprenda a tocar", hero_title_2: "bateria do zero", hero_title_3: "e ganhe confiança", hero_title_4: "em apenas 2 semanas",
+    hero_title_1: "Bateria do zero", hero_title_2: "com confiança", hero_title_3: "baseada no sistema", hero_title_4: "Prática Inteligente",
     hero_subtitle: "Descubra que você PODE aprender algo novo, se expressar com a música e se sentir seguro desde o primeiro dia — usando O Sistema Prática Inteligente.",
     hero_cta: "Acesso instantâneo por apenas $37", hero_guarantee: "Garantia 30 dias · Acesso vitalício",
     badge_beginners: "Iniciantes", badge_weeks: "2 semanas", badge_no_theory: "Sem teoria complicada",
