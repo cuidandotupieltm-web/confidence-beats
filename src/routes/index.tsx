@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Batería Desde Cero con Confianza | Aprende en 2 semanas" },
+      { title: "Bateria desde cero con confianza basada en el sistema practica inteligente" },
       {
         name: "description",
         content:
