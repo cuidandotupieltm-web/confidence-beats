@@ -112,18 +112,6 @@ export function Pricing() {
 
   const plans: Plan[] = [
     {
-      icon: "🎁",
-      tag: L.bump_tag,
-      title: L.bump_title,
-      subtitle: L.bump_sub,
-      price: "$19",
-      unit: L.perOnce,
-      features: L.bump_feats,
-      cta: L.bump_cta,
-      tone: "cyan",
-      href: "#oferta",
-    },
-    {
       icon: "🥁",
       tag: L.popular,
       title: L.core_title,
@@ -135,6 +123,18 @@ export function Pricing() {
       cta: L.core_cta,
       featured: true,
       tone: "magenta",
+      href: "#oferta",
+    },
+    {
+      icon: "🎁",
+      tag: L.bump_tag,
+      title: L.bump_title,
+      subtitle: L.bump_sub,
+      price: "$19",
+      unit: L.perOnce,
+      features: L.bump_feats,
+      cta: L.bump_cta,
+      tone: "cyan",
       href: "#oferta",
     },
     {
