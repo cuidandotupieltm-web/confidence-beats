@@ -35,7 +35,7 @@ export function VideoTestimonials() {
   );
 }
 
-function VideoCard({ video }: { video: { thumb: string; src: string; name: string; result: string; quote: string } }) {
+function VideoCard({ video }: { video: { thumb: string; src: string; name: string; result: string; quote: string; fit: "cover" | "contain" } }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
