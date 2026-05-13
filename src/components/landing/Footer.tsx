@@ -10,7 +10,7 @@ export function Footer() {
           <span className="emoji-3d">🥁</span> Batería Desde Cero con Confianza
         </div>
         <div>
-          © {new Date().getFullYear()} Daniel Estrada · {t("footer_rights")}
+          © {new Date().getFullYear()} Creatorem Music · {t("footer_rights")}
         </div>
         <div className="flex items-center justify-center gap-3">
           <a

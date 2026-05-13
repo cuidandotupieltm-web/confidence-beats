@@ -8,9 +8,9 @@ import { useT } from "@/lib/i18n";
 export function VideoTestimonials() {
   const { t } = useT();
   const videos = [
-    { thumb: p1, src: "/videos/testimonial-1.mp4", name: "Mauricio", result: t("vt_1_result"), quote: t("vt_1_quote") },
-    { thumb: p2, src: "/videos/testimonial-2.mp4", name: "Emilio R.", result: t("vt_2_result"), quote: t("vt_2_quote") },
-    { thumb: p3, src: "/videos/testimonial-3.mp4", name: "Jonathan F.", result: t("vt_3_result"), quote: t("vt_3_quote") },
+    { thumb: p1, src: "/videos/testimonial-1.mp4", name: "Mauricio", result: t("vt_1_result"), quote: t("vt_1_quote"), fit: "contain" as const },
+    { thumb: p2, src: "/videos/testimonial-2.mp4", name: "Emilio R.", result: t("vt_2_result"), quote: t("vt_2_quote"), fit: "contain" as const },
+    { thumb: p3, src: "/videos/testimonial-3.mp4", name: "Jonathan F.", result: t("vt_3_result"), quote: t("vt_3_quote"), fit: "cover" as const },
   ];
 
   return (
@@ -35,7 +35,7 @@ export function VideoTestimonials() {
   );
 }
 
-function VideoCard({ video }: { video: { thumb: string; src: string; name: string; result: string; quote: string } }) {
+function VideoCard({ video }: { video: { thumb: string; src: string; name: string; result: string; quote: string; fit: "cover" | "contain" } }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -62,7 +62,7 @@ function VideoCard({ video }: { video: { thumb: string; src: string; name: strin
           preload="metadata"
           onClick={togglePlay}
           onEnded={() => setPlaying(false)}
-          className="w-full h-full object-cover cursor-pointer"
+          className={`w-full h-full ${video.fit === "contain" ? "object-contain" : "object-cover"} cursor-pointer`}
         />
         {!playing && (
           <button
