@@ -1295,3 +1295,30 @@
   color: oklch(0.12 0.01 260) !important;
   -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
 }
+
+/* Green prices: white outline + subtle pulse animation */
+@keyframes price-neon-pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow:
+      -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff,
+      -2px 0 0 #fff, 2px 0 0 #fff, 0 -2px 0 #fff, 0 2px 0 #fff,
+      0 0 12px color-mix(in oklab, oklch(0.68 0.19 150) 60%, transparent);
+  }
+  50% {
+    transform: scale(1.04);
+    text-shadow:
+      -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff,
+      -2px 0 0 #fff, 2px 0 0 #fff, 0 -2px 0 #fff, 0 2px 0 #fff,
+      0 0 22px color-mix(in oklab, oklch(0.68 0.19 150) 90%, transparent),
+      0 0 36px color-mix(in oklab, oklch(0.78 0.22 145) 70%, transparent);
+  }
+}
+.price-neon {
+  display: inline-block;
+  animation: price-neon-pulse 2.4s ease-in-out infinite;
+  transform-origin: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .price-neon { animation: none; }
+}
