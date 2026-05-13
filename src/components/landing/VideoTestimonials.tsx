@@ -62,7 +62,7 @@ function VideoCard({ video }: { video: { thumb: string; src: string; name: strin
           preload="metadata"
           onClick={togglePlay}
           onEnded={() => setPlaying(false)}
-          className="w-full h-full object-cover cursor-pointer"
+          className={`w-full h-full ${video.fit === "contain" ? "object-contain" : "object-cover"} cursor-pointer`}
         />
         {!playing && (
           <button
