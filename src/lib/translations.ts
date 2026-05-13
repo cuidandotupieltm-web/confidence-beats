@@ -123,7 +123,7 @@ const dict = {
     mod_4_desc: "Aprendes a improvisar pequeños fills y a poner tu sello emocional en lo que tocas.",
     mod_5_day: "Días 13–14",
     mod_5_title: "Tu primera canción completa",
-    mod_5_desc: "Cierras el curso tocando una canción de principio a fin. Sales con confianza real.",
+    mod_5_desc: "Cierras el curso tocando una canción por semana, 2 canciones en total. Sales con confianza real.",
     // offer
     offer_eyebrow: "Oferta única",
     offer_title_1: "Empieza hoy por",
