@@ -499,6 +499,46 @@
   .hero-line-ember {
     background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--hot-pink), var(--magenta));
   }
+
+  /* Dark mode: black text for all sections after #problema */
+  .dark #problema ~ section,
+  .dark #problema ~ section h1,
+  .dark #problema ~ section h2,
+  .dark #problema ~ section h3,
+  .dark #problema ~ section h4,
+  .dark #problema ~ section h5,
+  .dark #problema ~ section h6,
+  .dark #problema ~ section p,
+  .dark #problema ~ section span,
+  .dark #problema ~ section li,
+  .dark #problema ~ section a,
+  .dark #problema ~ section div,
+  .dark #problema ~ section blockquote,
+  .dark #problema ~ section label,
+  .dark #problema ~ section strong,
+  .dark #problema ~ section em {
+    color: oklch(0.12 0.01 260) !important;
+  }
+  .dark #problema ~ section .text-gradient,
+  .dark #problema ~ section .text-gradient-ember,
+  .dark #problema ~ section .text-gradient-rainbow,
+  .dark #problema ~ section .text-shimmer,
+  .dark #problema ~ section .text-punch {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
+    color: oklch(0.12 0.01 260) !important;
+    filter: none !important;
+  }
+  /* Keep buttons/CTAs readable - restore their own foreground */
+  .dark #problema ~ section button,
+  .dark #problema ~ section button *,
+  .dark #problema ~ section [role="button"],
+  .dark #problema ~ section [role="button"] * {
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+  }
   .text-gradient-rainbow {
     background: linear-gradient(
       90deg,
