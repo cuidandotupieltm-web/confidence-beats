@@ -2,19 +2,13 @@ import { FadeIn, Section, Eyebrow } from "./Section";
 import p1 from "@/assets/testimonials/person-1.jpg";
 import p2 from "@/assets/testimonials/person-2.jpg";
 import p3 from "@/assets/testimonials/person-3.jpg";
-import p4 from "@/assets/testimonials/person-4.jpg";
-import p5 from "@/assets/testimonials/person-5.jpg";
-import p6 from "@/assets/testimonials/person-6.jpg";
 import { useT } from "@/lib/i18n";
 
 export function WrittenTestimonials() {
   const { t } = useT();
   const testimonials = [
     { img: p1, name: "Mauricio", role: t("role_1"), text: t("wt_1") },
-    { img: p4, name: "Mariana López", role: t("role_2"), text: t("wt_2") },
     { img: p2, name: "Emilio R.", role: t("role_3"), text: t("wt_3") },
-    { img: p5, name: "Felipe Soto", role: t("role_4"), text: t("wt_4") },
-    { img: p6, name: "Carolina Ruiz", role: t("role_5"), text: t("wt_5") },
     { img: p3, name: "Jonathan F.", role: t("role_6"), text: t("wt_6") },
   ];
 
