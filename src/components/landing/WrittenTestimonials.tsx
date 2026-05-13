@@ -2,9 +2,6 @@ import { FadeIn, Section, Eyebrow } from "./Section";
 import p1 from "@/assets/testimonials/person-1.jpg";
 import p2 from "@/assets/testimonials/person-2.jpg";
 import p3 from "@/assets/testimonials/person-3.jpg";
-import p4 from "@/assets/testimonials/person-4.jpg";
-import p5 from "@/assets/testimonials/person-5.jpg";
-import p6 from "@/assets/testimonials/person-6.jpg";
 import { useT } from "@/lib/i18n";
 
 export function WrittenTestimonials() {
