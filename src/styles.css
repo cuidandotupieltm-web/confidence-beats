@@ -1221,4 +1221,66 @@
     color: oklch(0.68 0.19 150) !important;
     text-shadow: 0 0 24px color-mix(in oklab, oklch(0.68 0.19 150) 35%, transparent) !important;
   }
+
+  /* === Buy buttons: yellow → luminous green, black text & icons (both modes) === */
+  .btn-mega,
+  .btn-glow,
+  .price-btn,
+  .price-btn-featured,
+  .price-card:nth-child(3) .price-btn {
+    background: linear-gradient(90deg, oklch(0.88 0.19 95), oklch(0.82 0.22 135), oklch(0.78 0.24 150)) !important;
+    background-size: 200% 100% !important;
+    color: oklch(0.12 0.01 260) !important;
+    -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
+    box-shadow:
+      0 14px 42px -8px color-mix(in oklab, oklch(0.82 0.22 135) 70%, transparent),
+      0 0 0 1px color-mix(in oklab, oklch(0.12 0.01 260) 30%, transparent) inset !important;
+  }
+  .btn-mega:hover,
+  .btn-glow:hover,
+  .price-btn:hover,
+  .price-btn-featured:hover,
+  .price-card:nth-child(3) .price-btn:hover {
+    background: linear-gradient(90deg, oklch(0.90 0.20 95), oklch(0.85 0.23 135), oklch(0.80 0.25 150)) !important;
+    box-shadow:
+      0 22px 55px -10px color-mix(in oklab, oklch(0.78 0.24 150) 80%, transparent),
+      0 0 0 1px color-mix(in oklab, oklch(0.12 0.01 260) 35%, transparent) inset !important;
+  }
+  .btn-mega::after {
+    background: linear-gradient(90deg, oklch(0.88 0.19 95), oklch(0.78 0.24 150)) !important;
+    opacity: 0.55 !important;
+  }
+  .btn-mega *,
+  .btn-glow *,
+  .price-btn *,
+  .price-btn-featured * {
+    color: oklch(0.12 0.01 260) !important;
+    -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
+  }
+  .btn-mega svg,
+  .btn-glow svg,
+  .price-btn svg,
+  .price-btn-featured svg {
+    stroke: oklch(0.12 0.01 260) !important;
+    color: oklch(0.12 0.01 260) !important;
+  }
+  /* Icon bubbles inside buy buttons: white bg + black icon for contrast */
+  .btn-mega .btn-icon-bubble,
+  .btn-mega .btn-arrow-bubble,
+  .btn-glow .btn-icon-bubble,
+  .btn-glow .btn-arrow-bubble {
+    background: oklch(0.99 0 0) !important;
+    color: oklch(0.12 0.01 260) !important;
+    -webkit-text-fill-color: oklch(0.12 0.01 260) !important;
+    box-shadow:
+      inset 0 1px 0 oklch(1 0 0 / 0.6),
+      0 6px 14px -8px color-mix(in oklab, oklch(0.12 0.01 260) 60%, transparent) !important;
+  }
+  .btn-mega .btn-icon-bubble svg,
+  .btn-mega .btn-arrow-bubble svg,
+  .btn-glow .btn-icon-bubble svg,
+  .btn-glow .btn-arrow-bubble svg {
+    stroke: oklch(0.12 0.01 260) !important;
+    color: oklch(0.12 0.01 260) !important;
+  }
 }
