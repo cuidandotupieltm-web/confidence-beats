@@ -98,24 +98,24 @@
   --cover-gradient:
     radial-gradient(
       62rem 42rem at 12% -10%,
-      color-mix(in oklab, var(--electric) 55%, transparent),
+      color-mix(in oklab, var(--electric) 50%, transparent),
       transparent 68%
     ),
     radial-gradient(
       68rem 46rem at 88% 2%,
-      color-mix(in oklab, var(--hot-pink) 64%, transparent),
+      color-mix(in oklab, var(--ember) 28%, transparent),
       transparent 66%
     ),
     radial-gradient(
       54rem 38rem at 50% 92%,
-      color-mix(in oklab, var(--ember) 34%, transparent),
+      color-mix(in oklab, var(--primary) 40%, transparent),
       transparent 70%
     ),
     linear-gradient(
       125deg,
-      oklch(0.16 0.16 252) 0%,
-      oklch(0.17 0.18 286) 46%,
-      oklch(0.22 0.2 322) 100%
+      oklch(0.10 0.04 260) 0%,
+      oklch(0.14 0.08 262) 46%,
+      oklch(0.10 0.04 260) 100%
     );
 }
 
