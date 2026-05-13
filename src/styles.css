@@ -1178,4 +1178,47 @@
       max-width: 42rem;
     }
   }
+
+  /* Eyebrow chips (e.g. "Tu profesor", "Planes y precios") — always yellow */
+  span.text-gradient.uppercase,
+  .light span.text-gradient.uppercase,
+  .dark span.text-gradient.uppercase,
+  .dark #problema ~ section span.text-gradient.uppercase,
+  .dark #problema span.text-gradient.uppercase {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: oklch(0.80 0.18 88) !important;
+    color: oklch(0.80 0.18 88) !important;
+    filter: none !important;
+  }
+
+  /* Stars always golden yellow, even inside dark #problema override */
+  .star-gold,
+  .light .star-gold,
+  .dark .star-gold,
+  .dark #problema ~ section .star-gold,
+  .dark #problema .star-gold {
+    color: var(--gold) !important;
+    -webkit-text-fill-color: var(--gold) !important;
+    background: none !important;
+  }
+
+  /* Prices in green in both modes */
+  .price-neon,
+  .light .price-neon,
+  .dark .price-neon,
+  .price-card-cyan .price-neon,
+  .price-card-magenta .price-neon,
+  .price-card-ember .price-neon,
+  .dark #problema ~ section .price-neon {
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: oklch(0.68 0.19 150) !important;
+    color: oklch(0.68 0.19 150) !important;
+    text-shadow: 0 0 24px color-mix(in oklab, oklch(0.68 0.19 150) 35%, transparent) !important;
+  }
 }
