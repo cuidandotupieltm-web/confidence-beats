@@ -500,30 +500,30 @@
     background-image: linear-gradient(90deg, var(--ember), var(--rose), var(--hot-pink), var(--magenta));
   }
 
-  /* Dark mode: black text for all sections after #problema */
-  .dark #problema ~ section,
-  .dark #problema ~ section h1,
-  .dark #problema ~ section h2,
-  .dark #problema ~ section h3,
-  .dark #problema ~ section h4,
-  .dark #problema ~ section h5,
-  .dark #problema ~ section h6,
-  .dark #problema ~ section p,
-  .dark #problema ~ section span,
-  .dark #problema ~ section li,
-  .dark #problema ~ section a,
-  .dark #problema ~ section div,
-  .dark #problema ~ section blockquote,
-  .dark #problema ~ section label,
-  .dark #problema ~ section strong,
-  .dark #problema ~ section em {
+  /* Dark mode: black text for #problema and all sections after it */
+  .dark :is(#problema, #problema ~ section),
+  .dark :is(#problema, #problema ~ section) h1,
+  .dark :is(#problema, #problema ~ section) h2,
+  .dark :is(#problema, #problema ~ section) h3,
+  .dark :is(#problema, #problema ~ section) h4,
+  .dark :is(#problema, #problema ~ section) h5,
+  .dark :is(#problema, #problema ~ section) h6,
+  .dark :is(#problema, #problema ~ section) p,
+  .dark :is(#problema, #problema ~ section) span,
+  .dark :is(#problema, #problema ~ section) li,
+  .dark :is(#problema, #problema ~ section) a,
+  .dark :is(#problema, #problema ~ section) div,
+  .dark :is(#problema, #problema ~ section) blockquote,
+  .dark :is(#problema, #problema ~ section) label,
+  .dark :is(#problema, #problema ~ section) strong,
+  .dark :is(#problema, #problema ~ section) em {
     color: oklch(0.12 0.01 260) !important;
   }
-  .dark #problema ~ section .text-gradient,
-  .dark #problema ~ section .text-gradient-ember,
-  .dark #problema ~ section .text-gradient-rainbow,
-  .dark #problema ~ section .text-shimmer,
-  .dark #problema ~ section .text-punch {
+  .dark :is(#problema, #problema ~ section) .text-gradient,
+  .dark :is(#problema, #problema ~ section) .text-gradient-ember,
+  .dark :is(#problema, #problema ~ section) .text-gradient-rainbow,
+  .dark :is(#problema, #problema ~ section) .text-shimmer,
+  .dark :is(#problema, #problema ~ section) .text-punch {
     background: none !important;
     -webkit-background-clip: initial !important;
     background-clip: initial !important;
