@@ -71,7 +71,7 @@ function VideoCard({ video }: { video: { thumb: string; src: string; name: strin
             aria-label={`Reproducir testimonio de ${video.name}`}
             className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-background/60 via-background/10 to-transparent"
           >
-            <span className="h-16 w-16 rounded-full btn-glow flex items-center justify-center transition-transform group-hover:scale-110 text-2xl emoji-3d">
+            <span className="h-16 w-16 rounded-full icon-orb flex items-center justify-center transition-transform group-hover:scale-110 text-2xl emoji-3d">
               ▶️
             </span>
           </button>

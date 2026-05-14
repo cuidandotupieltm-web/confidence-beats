@@ -31,7 +31,7 @@ export function Modules() {
           {modules.map((m, i) => (
             <FadeIn key={m.day} delay={i * 0.08}>
               <div className={`relative flex md:items-center gap-6 md:gap-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 h-8 w-8 rounded-full btn-glow flex items-center justify-center text-sm emoji-3d ring-4 ring-background animate-pulse-glow">
+                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 h-8 w-8 rounded-full icon-orb flex items-center justify-center text-sm emoji-3d ring-4 ring-background animate-pulse-glow">
                   {m.emoji}
                 </div>
                 <div className="ml-14 md:ml-0 md:w-1/2 md:px-8">

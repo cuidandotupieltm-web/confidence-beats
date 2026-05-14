@@ -1326,3 +1326,41 @@
 @media (prefers-reduced-motion: reduce) {
   .price-neon { animation: none; }
 }
+
+/* === Icon orbs (Modules timeline & video play buttons) — visible violet/electric, white icon === */
+.icon-orb {
+  background: linear-gradient(135deg, oklch(0.62 0.21 295), oklch(0.58 0.24 320), oklch(0.66 0.20 255)) !important;
+  box-shadow:
+    0 14px 36px -10px color-mix(in oklab, oklch(0.58 0.24 320) 75%, transparent),
+    0 0 0 1px oklch(1 0 0 / 0.22) inset !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+.icon-orb svg { stroke: #ffffff !important; color: #ffffff !important; }
+.icon-orb .emoji-3d,
+.icon-orb.emoji-3d {
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.45)) saturate(1.2) brightness(1.1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* === Language segmented control — gray background, black text in both modes === */
+.lang-segmented {
+  background: linear-gradient(180deg, oklch(0.86 0.005 260), oklch(0.78 0.008 260)) !important;
+  border-color: oklch(0.65 0.01 260) !important;
+}
+.lang-segmented-btn {
+  color: oklch(0.15 0.01 260) !important;
+  -webkit-text-fill-color: oklch(0.15 0.01 260) !important;
+}
+.lang-segmented-btn:hover {
+  color: oklch(0.05 0 0) !important;
+  -webkit-text-fill-color: oklch(0.05 0 0) !important;
+}
+.lang-segmented-btn.is-active {
+  color: oklch(0.08 0.01 260) !important;
+  -webkit-text-fill-color: oklch(0.08 0.01 260) !important;
+  background: linear-gradient(135deg, oklch(0.95 0.005 260), oklch(0.88 0.008 260)) !important;
+  box-shadow:
+    0 8px 22px -7px oklch(0 0 0 / 0.25),
+    0 0 0 1px oklch(0 0 0 / 0.15) inset !important;
+}
