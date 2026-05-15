@@ -8,6 +8,20 @@ export function Transformation() {
   const { t } = useT();
   const before = [t("before_1"), t("before_2"), t("before_3"), t("before_4")];
   const after = [t("after_1"), t("after_2"), t("after_3"), t("after_4")];
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (v.paused) {
+      v.play();
+      setIsPlaying(true);
+    } else {
+      v.pause();
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <Section id="transformacion">
