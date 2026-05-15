@@ -21,8 +21,17 @@ export function Transformation() {
       <div className="mt-16 grid lg:grid-cols-2 gap-10 items-center">
         <FadeIn>
           <div className="relative rounded-3xl overflow-hidden ring-stage">
-            <img src={transformation} alt="Student" width={1280} height={960} loading="lazy" className="w-full h-auto object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-background/70 via-transparent to-transparent" />
+            <video
+              src="/transformation-video.mp4"
+              poster={transformation}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full h-auto object-cover block"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-background/70 via-transparent to-transparent pointer-events-none" />
           </div>
         </FadeIn>
 
