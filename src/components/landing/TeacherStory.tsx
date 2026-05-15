@@ -21,7 +21,7 @@ export function TeacherStory() {
         </FadeIn>
 
         <div>
-          <FadeIn><Eyebrow>{t("teacher_eyebrow")}</Eyebrow></FadeIn>
+          <FadeIn><div className="flex justify-center"><Eyebrow>{t("teacher_eyebrow")}</Eyebrow></div></FadeIn>
           <FadeIn delay={0.1}>
             <h2 className="mt-6 text-3xl md:text-5xl font-bold leading-tight">
               {t("teacher_title_1")} <span className="text-shimmer">Daniel Estrada</span>
