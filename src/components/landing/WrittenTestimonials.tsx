@@ -9,7 +9,7 @@ export function WrittenTestimonials() {
   const testimonials = [
     { img: p1, name: "Mauricio", role: t("role_1"), text: t("wt_1") },
     { img: p2, name: "Emilio R.", role: t("role_3"), text: t("wt_3") },
-    { img: p3, name: "Jonathan F.", role: t("role_6"), text: t("wt_6") },
+    { img: p3, name: "Jonatan F.", role: t("role_6"), text: t("wt_6") },
   ];
 
   return (

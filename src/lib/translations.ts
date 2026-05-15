@@ -86,10 +86,10 @@ const dict = {
     wt_6: "El Sistema Práctica Inteligente es justo lo que necesitaba. Avancé más en 2 semanas que en 6 meses solo.",
     role_1: "Empresario",
     role_2: "Mamá",
-    role_3: "Diseñador",
+    role_3: "Músico ejecutante",
     role_4: "Estudiante",
     role_5: "Diseñadora",
-    role_6: "Ingeniero",
+    role_6: "Ingeniero en audio",
     // teacher
     teacher_eyebrow: "Tu profesor",
     teacher_title_1: "Conoce a",
