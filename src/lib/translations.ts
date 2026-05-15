@@ -40,7 +40,7 @@ const dict = {
     method_eyebrow: "El método",
     method_title_1: "El",
     method_title_2: "Sistema Práctica Inteligente",
-    method_subtitle: "Diseñado para que cualquier persona — sin importar edad o experiencia — avance de verdad sin perder tiempo ni motivación.",
+    method_subtitle: "Diseñado para que cualquier persona sin importar edad o experiencia avance de verdad sin perder tiempo ni motivación.",
     pillar_1_title: "Prácticas cortas",
     pillar_1_desc: "Sesiones de 10–15 minutos diseñadas para principiantes ocupados. Sin agotarte.",
     pillar_2_title: "Claridad total",
