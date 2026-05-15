@@ -16,7 +16,16 @@ export function TeacherStory() {
         <FadeIn>
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-br from-[var(--electric)]/40 via-[var(--magenta)]/30 to-[var(--ember)]/30 blur-2xl rounded-3xl animate-pulse-glow" />
-            <img src={teacher} alt="Daniel Estrada" width={1024} height={1280} loading="lazy" className="relative rounded-3xl ring-stage w-full h-auto object-cover" />
+            <div className="relative rounded-3xl ring-stage overflow-hidden aspect-video w-full bg-black">
+              <iframe
+                src="https://www.youtube.com/embed/ViZm0WUnSMg"
+                title="Daniel Estrada"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
           </div>
         </FadeIn>
 
