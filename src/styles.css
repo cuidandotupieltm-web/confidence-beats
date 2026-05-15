@@ -49,8 +49,8 @@
 .dark {
   --radius: 0.875rem;
 
-  --background: oklch(0.10 0.04 260);
-  --foreground: oklch(0.98 0.005 250);
+  --background: #D9E2F0;
+  --foreground: oklch(0.22 0.03 260);
 
   --card: oklch(0.16 0.05 262);
   --card-foreground: oklch(0.98 0.005 250);
@@ -89,34 +89,17 @@
   --gold: oklch(0.86 0.17 90);
   --success: oklch(0.76 0.18 155);
 
-  --glass-bg-1: oklch(1 0 0 / 0.08);
-  --glass-bg-2: oklch(1 0 0 / 0.03);
-  --glass-border: oklch(1 0 0 / 0.14);
-  --glass-strong-1: oklch(1 0 0 / 0.13);
-  --glass-strong-2: oklch(1 0 0 / 0.05);
-  --grid-line: oklch(1 0 0 / 0.05);
+  --glass-bg-1: rgba(255, 255, 255, 0.55);
+  --glass-bg-2: rgba(255, 255, 255, 0.30);
+  --glass-border: rgba(30, 50, 90, 0.10);
+  --glass-strong-1: rgba(255, 255, 255, 0.75);
+  --glass-strong-2: rgba(255, 255, 255, 0.50);
+  --grid-line: rgba(30, 50, 90, 0.05);
   --cover-gradient:
-    radial-gradient(
-      62rem 42rem at 12% -10%,
-      color-mix(in oklab, var(--electric) 50%, transparent),
-      transparent 68%
-    ),
-    radial-gradient(
-      68rem 46rem at 88% 2%,
-      color-mix(in oklab, var(--ember) 28%, transparent),
-      transparent 66%
-    ),
-    radial-gradient(
-      54rem 38rem at 50% 92%,
-      color-mix(in oklab, var(--primary) 40%, transparent),
-      transparent 70%
-    ),
-    linear-gradient(
-      125deg,
-      oklch(0.10 0.04 260) 0%,
-      oklch(0.14 0.08 262) 46%,
-      oklch(0.10 0.04 260) 100%
-    );
+    radial-gradient(60rem 40rem at 10% -10%, rgba(206, 216, 232, 0.85), transparent 65%),
+    radial-gradient(65rem 45rem at 90% 5%, rgba(241, 244, 250, 0.9), transparent 65%),
+    radial-gradient(55rem 38rem at 50% 95%, rgba(229, 235, 245, 0.85), transparent 70%),
+    linear-gradient(135deg, #F1F4FA 0%, #E5EBF5 40%, #D9E2F0 75%, #CED8E8 100%);
 }
 
 /* LIGHT — Royal blue + yellow on white */
@@ -124,8 +107,8 @@
 .light {
   --radius: 0.875rem;
 
-  --background: oklch(0.985 0.012 250);
-  --foreground: oklch(0.12 0.01 260);
+  --background: #D9E2F0;
+  --foreground: oklch(0.22 0.03 260);
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.04 260);
@@ -170,12 +153,10 @@
   --glass-strong-2: oklch(1 0 0 / 0.75);
   --grid-line: oklch(0.18 0.04 260 / 0.06);
   --cover-gradient:
-    linear-gradient(
-      125deg,
-      oklch(0.985 0.012 250) 0%,
-      oklch(0.975 0.016 252) 50%,
-      oklch(0.985 0.012 250) 100%
-    );
+    radial-gradient(60rem 40rem at 10% -10%, rgba(206, 216, 232, 0.85), transparent 65%),
+    radial-gradient(65rem 45rem at 90% 5%, rgba(241, 244, 250, 0.9), transparent 65%),
+    radial-gradient(55rem 38rem at 50% 95%, rgba(229, 235, 245, 0.85), transparent 70%),
+    linear-gradient(135deg, #F1F4FA 0%, #E5EBF5 40%, #D9E2F0 75%, #CED8E8 100%);
 }
 
 @layer base {
