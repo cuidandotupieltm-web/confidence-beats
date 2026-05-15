@@ -289,6 +289,13 @@
         color-mix(in oklab, var(--violet) 12%, var(--background))
       );
   }
+  .light .section-surface,
+  .light .bg-aurora {
+    background:
+      radial-gradient(60rem 40rem at 10% -10%, rgba(206, 216, 232, 0.55), transparent 65%),
+      radial-gradient(65rem 45rem at 90% 5%, rgba(241, 244, 250, 0.7), transparent 65%),
+      linear-gradient(135deg, #F1F4FA 0%, #E5EBF5 45%, #D9E2F0 80%, #CED8E8 100%);
+  }
   .section-heading {
     font-weight: 900;
     line-height: 1.05;
