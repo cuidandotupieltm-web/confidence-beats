@@ -1,6 +1,8 @@
 import { FadeIn, Section, Eyebrow } from "./Section";
 import transformation from "@/assets/transformation.jpg";
 import { useT } from "@/lib/i18n";
+import { useRef, useState } from "react";
+import { Play, Pause } from "lucide-react";
 
 export function Transformation() {
   const { t } = useT();
