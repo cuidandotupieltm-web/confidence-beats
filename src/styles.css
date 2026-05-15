@@ -1162,8 +1162,8 @@
     background-image: none !important;
     -webkit-background-clip: initial !important;
     background-clip: initial !important;
-    -webkit-text-fill-color: oklch(0.80 0.18 88) !important;
-    color: oklch(0.80 0.18 88) !important;
+    -webkit-text-fill-color: oklch(0.55 0.20 260) !important;
+    color: oklch(0.55 0.20 260) !important;
     filter: none !important;
   }
 
