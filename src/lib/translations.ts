@@ -25,7 +25,7 @@ const dict = {
     problem_title_1: "No es",
     problem_title_2: "talento",
     problem_title_3: "lo que te falta.",
-    problem_subtitle: "Es claridad. Es método. Es alguien que te diga, sin teoría complicada, qué practicar hoy para sentirte avanzando mañana.",
+    problem_subtitle: "Es claridad, método. Alguien que te diga sin teoría complicada qué practicar hoy para seguir avanzando mañana.",
     pain_1_title: "“No nací para la música”",
     pain_1_desc: "Te repites esa frase hasta creerla. Pero no es talento — es método.",
     pain_2_title: "Frustración al practicar",
