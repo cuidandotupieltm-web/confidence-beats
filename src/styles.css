@@ -124,7 +124,7 @@
 .light {
   --radius: 0.875rem;
 
-  --background: oklch(0.99 0.003 250);
+  --background: oklch(0.93 0.025 250);
   --foreground: oklch(0.12 0.01 260);
 
   --card: oklch(1 0 0);
@@ -452,8 +452,8 @@
   .light .hero-line-rainbow,
   .light .hero-line-ember {
     background-image: none;
-    -webkit-text-fill-color: oklch(0.72 0.18 88);
-    color: oklch(0.72 0.18 88);
+    -webkit-text-fill-color: oklch(0.50 0.28 264);
+    color: oklch(0.50 0.28 264);
   }
   .light .text-gradient,
   .light .text-gradient-ember,
