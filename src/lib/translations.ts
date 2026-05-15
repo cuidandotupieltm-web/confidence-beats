@@ -48,7 +48,7 @@ const dict = {
     pillar_3_title: "Sin teoría aburrida",
     pillar_3_desc: "Aprendes tocando, sintiendo y disfrutando. Cero confusión musical.",
     pillar_4_title: "Resultados rápidos",
-    pillar_4_desc: "En 2 semanas ya estás tocando tus primeros ritmos con confianza real.",
+    pillar_4_desc: "En 2 semanas ya estás tocando tus primeras 2 canciones con confianza real.",
     // transformation
     trans_eyebrow: "La transformación",
     trans_title_1: "Más que tocar batería:",
