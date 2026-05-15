@@ -1,4 +1,5 @@
 import { useT } from "@/lib/i18n";
+import creatoremLogo from "@/assets/creatorem-logo.jpeg";
 
 export function Navbar() {
   const { t } = useT();
@@ -22,7 +23,12 @@ export function Navbar() {
             <a href="#testimonios" className="hover:text-gradient transition">{t("nav_testimonials")}</a>
             <a href="#faq" className="hover:text-gradient transition">{t("nav_faq")}</a>
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <img
+              src={creatoremLogo}
+              alt="Creatorem Music"
+              className="h-10 w-10 rounded-full object-cover ring-2 ring-white/40 shadow-md"
+            />
             <a
               href="#oferta"
               className="hidden sm:inline-flex items-center gap-2 rounded-full btn-glow px-4 py-2 text-sm font-black text-primary-foreground"
@@ -36,3 +42,4 @@ export function Navbar() {
     </header>
   );
 }
+
