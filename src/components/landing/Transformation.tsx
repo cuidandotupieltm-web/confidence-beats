@@ -2,7 +2,7 @@ import { FadeIn, Section, Eyebrow } from "./Section";
 import transformation from "@/assets/transformation.jpg";
 import { useT } from "@/lib/i18n";
 import { useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 export function Transformation() {
   const { t } = useT();
@@ -10,10 +10,15 @@ export function Transformation() {
   const after = [t("after_1"), t("after_2"), t("after_3"), t("after_4")];
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
     const v = videoRef.current;
     if (!v) return;
+    if (v.muted) {
+      v.muted = false;
+      setIsMuted(false);
+    }
     if (v.paused) {
       v.play();
       setIsPlaying(true);
@@ -21,6 +26,13 @@ export function Transformation() {
       v.pause();
       setIsPlaying(false);
     }
+  };
+
+  const toggleMute = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    setIsMuted(v.muted);
   };
 
   return (
@@ -58,6 +70,14 @@ export function Transformation() {
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center h-16 w-16 rounded-full glass-strong hover:scale-105 transition shadow-lg"
             >
               {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
+            </button>
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+              className="absolute bottom-4 right-4 inline-flex items-center justify-center h-11 w-11 rounded-full glass-strong hover:scale-105 transition shadow-lg"
+            >
+              {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
             </button>
           </div>
         </FadeIn>
