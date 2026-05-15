@@ -1,5 +1,6 @@
 import hero from "@/assets/hero-drummer.jpg";
 import { CTAButton } from "./CTAButton";
+const heroVideo = "/hero-video.mp4";
 import { useT } from "@/lib/i18n";
 
 export function Hero() {
