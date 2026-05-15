@@ -38,6 +38,7 @@ export function Transformation() {
         <FadeIn>
           <div className="relative rounded-3xl overflow-hidden ring-stage">
             <video
+              ref={videoRef}
               src="/transformation-video.mp4"
               poster={transformation}
               autoPlay
@@ -45,9 +46,19 @@ export function Transformation() {
               loop
               playsInline
               preload="metadata"
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
               className="w-full h-auto object-cover block"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-background/70 via-transparent to-transparent pointer-events-none" />
+            <button
+              type="button"
+              onClick={togglePlay}
+              aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
+              className="absolute bottom-4 right-4 inline-flex items-center justify-center h-12 w-12 rounded-full glass-strong hover:scale-105 transition shadow-lg"
+            >
+              {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
+            </button>
           </div>
         </FadeIn>
 
