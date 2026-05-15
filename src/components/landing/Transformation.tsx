@@ -67,9 +67,9 @@ export function Transformation() {
               type="button"
               onClick={togglePlay}
               aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center h-16 w-16 rounded-full glass-strong hover:scale-105 transition shadow-lg"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center h-16 w-16 rounded-full bg-transparent hover:scale-110 transition text-white drop-shadow-lg"
             >
-              {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
+              {isPlaying ? <Pause className="h-10 w-10" /> : <Play className="h-10 w-10 ml-0.5" />}
             </button>
             <button
               type="button"
