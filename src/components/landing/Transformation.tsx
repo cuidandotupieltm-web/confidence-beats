@@ -71,6 +71,14 @@ export function Transformation() {
             >
               {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
             </button>
+            <button
+              type="button"
+              onClick={toggleMute}
+              aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+              className="absolute bottom-4 right-4 inline-flex items-center justify-center h-11 w-11 rounded-full glass-strong hover:scale-105 transition shadow-lg"
+            >
+              {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+            </button>
           </div>
         </FadeIn>
 
