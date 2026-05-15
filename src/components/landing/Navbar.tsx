@@ -1,5 +1,4 @@
 import { useT } from "@/lib/i18n";
-import { LanguageThemeControls } from "./LanguageThemeControls";
 
 export function Navbar() {
   const { t } = useT();
@@ -24,7 +23,6 @@ export function Navbar() {
             <a href="#faq" className="hover:text-gradient transition">{t("nav_faq")}</a>
           </nav>
           <div className="flex items-center gap-2">
-            <LanguageThemeControls />
             <a
               href="#oferta"
               className="hidden sm:inline-flex items-center gap-2 rounded-full btn-glow px-4 py-2 text-sm font-black text-primary-foreground"

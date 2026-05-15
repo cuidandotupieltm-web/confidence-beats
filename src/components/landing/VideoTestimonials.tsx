@@ -71,8 +71,10 @@ function VideoCard({ video }: { video: { thumb: string; src: string; name: strin
             aria-label={`Reproducir testimonio de ${video.name}`}
             className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-background/60 via-background/10 to-transparent"
           >
-            <span className="h-16 w-16 rounded-full icon-orb flex items-center justify-center transition-transform group-hover:scale-110 text-2xl emoji-3d">
-              ▶️
+            <span className="flex items-center justify-center transition-transform group-hover:scale-110 drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]" aria-hidden="true">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z" />
+              </svg>
             </span>
           </button>
         )}

@@ -10,20 +10,10 @@ type I18nCtx = {
 const I18nContext = createContext<I18nCtx | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+  const [lang] = useState<Lang>("es");
 
-  useEffect(() => {
-    const saved = (typeof window !== "undefined" && localStorage.getItem("lang")) as Lang | null;
-    if (saved && ["es", "en", "fr"].includes(saved)) {
-      setLangState(saved);
-    } else if (typeof window !== "undefined") {
-      localStorage.setItem("lang", "es");
-    }
-  }, []);
-
-  const setLang = (l: Lang) => {
-    setLangState(l);
-    if (typeof window !== "undefined") localStorage.setItem("lang", l);
+  const setLang = (_l: Lang) => {
+    // Idioma fijo en español
   };
 
   const t = (key: TranslationKey): string => {
@@ -55,23 +45,14 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme] = useState<Theme>("light");
 
   useEffect(() => {
-    if (typeof document === "undefined") return;
-    const root = document.documentElement;
-    const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const currentTheme: Theme = saved === "dark" || root.classList.contains("dark") ? "dark" : "light";
-    applyTheme(currentTheme);
-    setTheme(currentTheme);
+    applyTheme("light");
   }, []);
 
   const toggle = () => {
-    setTheme((current) => {
-      const next = current === "dark" ? "light" : "dark";
-      applyTheme(next);
-      return next;
-    });
+    // Modo oscuro deshabilitado
   };
 
   return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
