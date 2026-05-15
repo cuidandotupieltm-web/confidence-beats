@@ -437,8 +437,8 @@
   .light .hero-line-rainbow,
   .light .hero-line-ember {
     background-image: none;
-    -webkit-text-fill-color: oklch(0.50 0.28 264);
-    color: oklch(0.50 0.28 264);
+    -webkit-text-fill-color: oklch(0.28 0.18 260);
+    color: oklch(0.28 0.18 260);
   }
   .light .text-gradient,
   .light .text-gradient-ember,
