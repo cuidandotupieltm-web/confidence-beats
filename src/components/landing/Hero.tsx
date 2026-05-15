@@ -55,12 +55,15 @@ export function Hero() {
 
         <div className="hero-visual relative mt-14 w-full max-w-5xl">
           <div className="relative rounded-[2rem] overflow-hidden ring-stage">
-            <img
-              src={hero}
-              alt="Drummer"
-              width={1920}
-              height={1080}
-              className="w-full h-auto object-cover"
+            <video
+              src={heroVideo}
+              poster={hero}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full h-auto object-cover block"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
             <div className="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full glass-strong px-3 py-1.5 text-xs font-bold">
