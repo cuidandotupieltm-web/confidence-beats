@@ -55,7 +55,7 @@ export function Transformation() {
               type="button"
               onClick={togglePlay}
               aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
-              className="absolute bottom-4 right-4 inline-flex items-center justify-center h-12 w-12 rounded-full glass-strong hover:scale-105 transition shadow-lg"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center h-16 w-16 rounded-full glass-strong hover:scale-105 transition shadow-lg"
             >
               {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
             </button>
