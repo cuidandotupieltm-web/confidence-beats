@@ -45,23 +45,14 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme] = useState<Theme>("light");
 
   useEffect(() => {
-    if (typeof document === "undefined") return;
-    const root = document.documentElement;
-    const saved = typeof window !== "undefined" ? localStorage.getItem("theme") : null;
-    const currentTheme: Theme = saved === "dark" || root.classList.contains("dark") ? "dark" : "light";
-    applyTheme(currentTheme);
-    setTheme(currentTheme);
+    applyTheme("light");
   }, []);
 
   const toggle = () => {
-    setTheme((current) => {
-      const next = current === "dark" ? "light" : "dark";
-      applyTheme(next);
-      return next;
-    });
+    // Modo oscuro deshabilitado
   };
 
   return <ThemeContext.Provider value={{ theme, toggle }}>{children}</ThemeContext.Provider>;
